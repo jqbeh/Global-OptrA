@@ -1,0 +1,1080 @@
+---
+title: "visualisation"
+author: "Jia Qi Beh"
+date: "2025-08-04"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Global OptrA manuscript - visualisation
+
+This document contains all R packages and codes used to create the figures in the manuscript 'Global dissemination of optrA-mediated linezolid resistance in enterococci'.
+
+
+# Libraries
+
+```{r}
+pacman::p_load(
+  tidyverse,     # data management and visualization
+  rio,
+  UpSetR,        # special package for combination plots
+  ggupset,
+  ComplexUpset,
+  readxl,
+  readr,
+  reshape2,      # melt() function
+  svglite,
+  hrbrthemes,
+  viridis,
+  RColorBrewer,
+  pheatmap,
+  cowplot,
+  patchwork,
+  micropan,
+  matrixStats,
+  ggforce, 
+  reshape2,
+  ggtree,
+  here,
+  ape,
+  treeio,
+  ggnewscale,
+  phytools,
+  phangorn,
+  pals,
+  scales,
+  lubridate,
+  rworldmap,
+  cowplot, 
+  stats,
+  gplot)       # special package for combination plots
+```
+
+Set working directory
+
+```{r}
+setwd("~/Downloads/")
+```
+
+
+# Figure 1
+
+Manually constructed.
+
+
+# Figure 2
+
+## 2a - map
+
+Import data
+```{r}
+data <- read.csv("figure_2/map_metadata.csv")
+data
+```
+
+Count the total number of isolates for each country
+```{r}
+country_counts <- data %>% dplyr::count(country)
+total_isolates <- sum(country_counts$n)
+
+# Convert counts to percentages
+country_counts <- country_counts %>%
+  mutate(percentage_category = cut(
+    n, 
+    breaks = c(-Inf, 20, 40, 60, 80, Inf), 
+    labels = c("<20%", "20-40%", "40-60%", "60-80%", ">80%"), 
+    include.lowest = TRUE
+  ))
+country_counts
+```
+
+Plot map
+```{r}
+# Define color palette
+colours <- c('#caf0f8', '#90e0ef','#00b4d8', '#0077b6', '#03045e') #own colour palette
+
+# Make plot
+pdf("figure_2a.pdf", width=80, height=60)
+sPDF <- joinCountryData2Map(country_counts, joinCode='NAME', nameJoinColumn='country')
+map.allOptrA <- mapCountryData(
+  sPDF, 
+  nameColumnToPlot='percentage_category', 
+  catMethod="categorical", 
+  missingCountryCol='dark grey', 
+  colourPalette=brewer.pal(5, "Blues"),  # Use a color palette for categories
+  addLegend=TRUE
+)
+dev.off()
+```
+
+
+## 2b - optrA Efs
+
+Count each source type for E. faecalis
+```{r}
+data <- read.csv("figure_2/optrAEfs.csv")
+data %>% dplyr::count(sample_type) %>%
+  arrange(desc(n))
+```
+
+Make plot
+```{r}
+plot <- 
+  ggplot(data, aes(x = year, fill= sample_type)) + 
+  geom_bar(color = "black", width = 0.5) +
+  xlab("Collection year")+
+  ylab("Number of isolates") +
+  theme(axis.title.x = element_text(size = 15, colour = "black", 
+                                    margin = margin(10, 0, 10, 0), face = "bold"),
+        axis.text.x = element_text(size = 15, color = "black",),
+        axis.text.y = element_text(size = 15, color = "black"),
+        axis.title.y = element_text(colour = "black", margin = margin(0, 10, 0, 10)))+
+  scale_fill_manual(values = c("animal"="#A8D0DB", "clinical/human"="#E49273", 
+                               "environment"="#A37A74", na.value = "white"))+
+  theme_bw()
+plot
+
+ggsave("figure_2b.pdf", plot, width = 8, height = 6)
+```
+
+## 2c - optrA Efm
+
+Count each source type for E. faecium
+```{r}
+data <- read.csv("figure_2/optrAEfm.csv")
+data %>% dplyr::count(sample_type) %>%
+  arrange(desc(n))
+```
+
+Make plot
+```{r}
+plot <- 
+  ggplot(data, aes(x = year, fill= sample_type)) + 
+  geom_bar(color = "black", width = 0.5) +
+  xlab("Collection year")+
+  ylab("Number of isolates") +
+  theme(axis.title.x = element_text(size = 15, colour = "black", 
+                                    margin = margin(10, 0, 10, 0), face = "bold"),
+        axis.text.x = element_text(size = 15, color = "black",),
+        axis.text.y = element_text(size = 15, color = "black"),
+        axis.title.y = element_text(colour = "black", margin = margin(0, 10, 0, 10)))+
+  scale_fill_manual(values = c("animal"="#A8D0DB", "clinical/human"="#E49273", 
+                               "environment"="#A37A74", na.value = "white"))+
+  theme_bw()
+plot
+
+ggsave("figure_2c.pdf", plot, width = 8, height = 6)
+```
+
+
+# Figure 3
+
+## 3a - mash tree
+
+Clean up abritamr output
+```{r}
+# Read file
+df <- read.csv("figure_3/abritamr.csv")
+df
+
+# Create a new column to show optrA presence/absence
+sample_data <- df %>%
+  mutate(optrA = if_else(
+    if_any(everything(), ~ grepl("optrA", ., fixed = TRUE)),
+    "yes",
+    "no"
+  ))
+sample_data
+
+# Count number of isolates positive for optrA (optrA == yes)
+sum(sample_data$optrA == "yes") # 55 isolates
+```
+
+Make tree
+```{r}
+# Load tree file
+iqtree <- ape::read.tree("figure_3/mashtree.dnd")
+iqtree
+
+# Plot tree with rhierBAPS levels
+tree.1 <- ggtree(iqtree)
+tree.1
+
+# Check whether the Isolate IDs in both files align correctly
+sample_data$Isolate %in% iqtree$tip.label
+iqtree$tip.label %in% sample_data$Isolate
+
+setdiff(sample_data$Isolate, iqtree$tip.label) 
+setdiff(iqtree$tip.label, sample_data$Isolate) 
+
+# Add root and scale bar
+tree_mid <- midpoint(iqtree)
+tree_mid
+ape::write.tree(tree_mid, file='~/Downloads/midpoint_tree.nwk')
+```
+
+Make plot
+```{r}
+# Plot tree
+tree.1 <- ggtree(iqtree)
+tree.1
+tree.2 <- tree.1 %<+% sample_data
+tree.3 <- tree.2 + geom_tippoint(size=0.5, aes(color = optrA))
+
+# Set manual tip colours
+tree.3 <- tree.2 + geom_tippoint(size=0.5, aes(color = optrA)) +
+  scale_color_manual(values = c("yes" = "#fb8500", "no" = "#7F7F7F")) +
+  theme(legend.position = "right")
+tree.3
+
+ggsave("figure_3a.pdf", tree.3, width=8, height=6)
+```
+
+## 3b - dendrogram
+
+Import data and make dendrogram
+```{r}
+# Import data
+df <- read.csv("figure_3/transposed_metadata.csv")
+
+# Distance matrix
+d <- dist(df)
+
+# Hierarchical clustering
+hc <- hclust(d, method = "ward.D2")
+print(hc)
+
+# Make dendrogram
+pdf("figure_3b.pdf")
+plot(as.dendrogram(hc), main = "Efm dendrogram", horiz = TRUE)
+  # horiz = rotate plot horizontally (by default the dendrogram is vertical)
+dev.off()
+```
+
+Draw heatmap for gene presence-absence matrix
+```{r}
+heatmap_df <- read.csv("figure_3/heatmap_metadata.csv")
+binary_matrix <- as.matrix(heatmap_df[, ])
+
+pdf("heatmap.pdf")
+heatmap(binary_matrix, Rowv = NA, Colv = NA, col = c("white", "black"), 
+        scale = "none", xlab = "Features", ylab = "Samples")
+dev.off()
+```
+
+Other heatmaps were added manually.
+
+
+# Figure 4
+
+## 4a - mashtree
+
+Clean up abritamr output
+```{r}
+# Read file
+df <- read.csv("figure_4/abritamr.csv")
+df
+
+# Create a new column to show optrA presence/absence
+sample_data <- df %>%
+  mutate(optrA = if_else(
+    if_any(everything(), ~ grepl("optrA", ., fixed = TRUE)),
+    "yes",
+    "no"
+  ))
+sample_data
+
+# Count number of isolates positive for optrA (optrA == yes)
+sum(sample_data$optrA == "yes") # 31 isolates
+```
+
+Make tree
+```{r}
+# Load tree file
+iqtree <- ape::read.tree("figure_4/mashtree.dnd")
+iqtree
+
+# Plot tree with rhierBAPS levels
+tree.1 <- ggtree(iqtree)
+tree.1
+
+# Check whether the Isolate IDs in both files align correctly
+sample_data$Isolate %in% iqtree$tip.label
+iqtree$tip.label %in% sample_data$Isolate
+
+setdiff(sample_data$Isolate, iqtree$tip.label) 
+setdiff(iqtree$tip.label, sample_data$Isolate) 
+
+# Add root and scale bar
+tree_mid <- midpoint(iqtree)
+tree_mid
+ape::write.tree(tree_mid, file='~/Downloads/midpoint_tree.nwk')
+```
+
+Make plot
+```{r}
+# Plot tree
+tree.1 <- ggtree(iqtree)
+tree.1
+tree.2 <- tree.1 %<+% sample_data
+tree.3 <- tree.2 + geom_tippoint(size=0.5, aes(color = optrA))
+
+# Set manual tip colours
+tree.3 <- tree.2 + geom_tippoint(size=0.5, aes(color = optrA)) +
+  scale_color_manual(values = c("yes" = "#fb8500", "no" = "#7F7F7F")) +
+  theme(legend.position = "right")
+tree.3
+
+ggsave("figure_4a.pdf", tree.3, width=8, height=6)
+```
+
+## 4b - dendrogram
+
+Import data and make dendrogram
+```{r}
+# Import data
+df <- read.csv("figure_4/transposed_metadata.csv")
+
+# Distance matrix
+d <- dist(df)
+
+# Hierarchical clustering
+hc <- hclust(d, method = "ward.D2")
+print(hc)
+
+# Make dendrogram
+pdf("~/Downloads/dendrogram.pdf")
+plot(as.dendrogram(hc), main = "Efm dendrogram", horiz = TRUE)
+  # horiz = rotate plot horizontally (by default the dendrogram is vertical)
+dev.off()
+```
+
+Draw heatmap for gene presence-absence matrix
+```{r}
+heatmap_df <- read.csv("figure_4/heatmap_metadata.csv")
+binary_matrix <- as.matrix(heatmap_df[, ])
+
+pdf("heatmap.pdf")
+heatmap(binary_matrix, Rowv = NA, Colv = NA, col = c("white", "black"), 
+        scale = "none", xlab = "Features", ylab = "Samples")
+dev.off()
+```
+
+Other heatmaps were added manually.
+
+
+# Figure 5
+
+Pie charts for each country were created separately and added to map
+```{r}
+data <- data.frame(category = c("A", "B", "C"), 
+                   value = c(0, 1, 0))
+
+custom_colors <- c("A" = "#2a6f97", "B" = "#e29578", "C" = "#edf6f9")
+
+p <- ggplot(data, aes(x = "", y = value, fill = category)) +
+  geom_bar(stat = "identity", width = 1) +
+  coord_polar("y", start = 0) +
+  scale_fill_manual(values = custom_colors) +
+  theme_void() +
+  theme(legend.position = "none")
+p
+
+ggsave("country_name.pdf", p, width = 6, height = 4, dpi = 300)
+```
+
+
+# Figure 6
+
+Figure 6 was created using Clinker.
+
+
+# Figure S1
+
+Import tree
+```{r}
+tree <- ape::read.tree("figure_s1/core.aln.treefile")
+tree
+```
+
+Add metadata
+```{r}
+sample_data <- read.csv("figure_s1/efs_metadata.csv")
+View(sample_data)
+
+# Check whether the Isolate IDs in both files align correctly
+sample_data$ID %in% tree$tip.label
+tree$tip.label %in% sample_data$ID 
+
+setdiff(sample_data$ID, tree$tip.label) #metadata ID that are not in tree 
+setdiff(tree$tip.label, sample_data$ID) #tree ID that are not in metadata 
+
+# Add midpoint root
+tree_mid <- midpoint(tree)
+tree_mid
+```
+
+Plot tree
+```{r}
+tree.1 <- ggtree(tree_mid)
+tree.1
+
+# Add root and scale bar
+tree.2 <- 
+  ggtree(tree_mid, branch.length = 0.5) %<+% sample_data +
+  geom_rootedge(rootedge = 0.0005) +
+  geom_treescale(x=-0.005, y=50)
+tree.2
+```
+
+Heat map 1: Continent
+```{r}
+continent <- data.frame("continent" = sample_data[,c("continent")])
+rownames(continent) <- sample_data$ID
+
+tree.3 <- tree.2 + new_scale_fill()
+h1 <- 
+  gheatmap(tree.3, continent, width = 0.05, color="white", offset=0.01,
+           colnames = FALSE) +
+  scale_fill_manual(name = "continent",
+                    values = c("#423E3B","#FF2E00","#FEA82F", 
+                               "#FFFECB","#5448C8", "#2a9d8f", "#5448C8"),
+                    na.value="white",  # set colour of NA values
+                    breaks = c("Oceania", "North America", "Europe",
+                               "Asia", "South America", "asia"),
+                    labels = c("Oceania", "North America", "Europe", 
+                               "Asia", "South America", "asia")) +
+  theme(legend.position = "none")
+h1
+```
+
+Heatmap 2: Source type
+```{r}
+sample_type <- data.frame("sample_type" = sample_data[,c("sample_type")])
+rownames(sample_type) <- sample_data$ID
+
+h2 <- h1 + new_scale_fill()
+h3 <- 
+  gheatmap(h2, sample_type, width = 0.05, color="white", offset=0.027,
+           colnames = FALSE) +
+  scale_fill_manual(name = "host",
+                    values = c("#f28482", "#f28482", "#f28482", 
+                               "#8ecae6", "#84a59d", "white"),
+                    na.value="white",  # set colour of NA values
+                    breaks = c("clinical/human", "human", "clinical", 
+                               "animal", "environmental", "others"),
+                    labels = c("clinical/human", "human", "clinical", 
+                               "animal", "environmental", "others")) +
+  theme(legend.position = "none")
+h3
+```
+
+Heatmap 3: ST
+Only top 10 STs annotated
+```{r}
+ST <- data.frame("ST" = sample_data[,c("ST")])
+rownames(ST) <- sample_data$ID
+sample_data$ST <- as.factor(sample_data$ST)  # convert into factor data type
+sample_data <- sample_data %>%
+  mutate(ST = case_when(
+    ST %in% c('16','476','480','21','585','86','256', '632') ~ as.character(ST),
+    TRUE ~ 'others'  # Convert everything else into 'others'
+  ))
+
+ST <- data.frame("MLST" = sample_data[,c("ST")])
+rownames(ST) <- sample_data$ID
+
+h4 <- h3 + new_scale_fill()
+h5 <- 
+  gheatmap(h4, ST, width = 0.05, color="white", offset=0.044,
+           colnames = FALSE) +
+  #colnames = TRUE, colnames_position= "top",
+  #colnames_angle = 0, hjust = 0.5, 
+  #font.size=3, colnames_offset_y = 1) +
+  scale_fill_manual(name = "ST",
+                    values = c("#588157", "#390099", "#BAF2D8",
+                               "#F2BAC9","#669bbc","#F2E2BA",
+                               "#C49799","#ee9b00", "white"), 
+                    na.value="white",  # set colour of NA values
+                    breaks = c('16','476','480','21','585','86','256', '632'),
+                    labels = c('16','476','480','21','585','86','256', '632')) +
+  theme(legend.position = 'bottom', 
+        legend.key.size = unit(0.2, 'cm'))
+h5
+```
+
+Heatmap 4: mlplasmids
+```{r}
+mlplasmids_prediction <- data.frame("mlplasmids_prediction" = sample_data[,c("mlplasmids_prediction")])
+rownames(mlplasmids_prediction) <- sample_data$ID
+
+h6 <- h5 + new_scale_fill()
+h7 <- 
+  gheatmap(h6, mlplasmids_prediction, width = 0.05, color="white", offset=0.061,
+           colnames = FALSE) +
+  scale_fill_manual(name = "mlplasmids_prediction",
+                    values = c("#fca311","#a8dadc"),
+                    na.value="white",  # set colour of NA values
+                    breaks = c("Chromosome", "Plasmid"),
+                    labels = c("Chromosome", "Plasmid")) +
+  theme(legend.position = "none")
+h7
+```
+
+Heatmap 5: optrA context
+```{r}
+sample_data$predicted_optrA_context <- as.factor(sample_data$predicted_optrA_context)
+
+predicted_optrA_context <- data.frame("predicted_optrA_context" = sample_data[,c("predicted_optrA_context")])
+rownames(predicted_optrA_context) <- sample_data$ID
+
+h8 <- h7 + new_scale_fill()
+h9 <- 
+  gheatmap(h8, predicted_optrA_context, width = 0.05, color="white", offset=0.078,
+           colnames = FALSE) +
+  scale_fill_manual(name = "mlplasmids_prediction",
+                    values = c("#9b5de5","#f15bb5", "#fee440"),
+                    na.value="white",  # set colour of NA values
+                    breaks = c("fexA-optrA", "fexA-optrA-ermA", "Tn6674"),
+                    labels = c("fexA-optrA", "fexA-optrA-ermA", "Tn6674")) +
+  theme(legend.position = "none")
+h9
+```
+
+Heatmap 6: Tn6674 variant
+```{r}
+sample_data$Tn6674_variant <- as.factor(sample_data$Tn6674_variant)
+
+Tn6674_variant <- data.frame("Tn6674_variant" = sample_data[,c("Tn6674_variant")])
+rownames(Tn6674_variant) <- sample_data$ID
+
+h10 <- h9 + new_scale_fill()
+h11 <- 
+  gheatmap(h10, Tn6674_variant, width = 0.05, color="white", offset=0.095,
+           colnames = FALSE) +
+  scale_fill_manual(name = "mlplasmids_prediction",
+                    values = c("#a4c3b2","#e26d5c"),
+                    na.value="white",  # set colour of NA values
+                    breaks = c("WT", "truncated"),
+                    labels = c("WT", "truncated")) +
+  theme(legend.position = "none")
+h11
+```
+
+Save plot
+```{r}
+ggsave("figure_s1.pdf", h11, width=8, height=6, dpi=300)
+```
+
+
+# Figure S2
+
+Import tree
+```{r}
+tree <- ape::read.tree("figure_s2/core.aln.treefile")
+tree
+```
+
+Add metadata
+```{r}
+sample_data <- read.csv("figure_s2/efm_metadata.csv")
+View(sample_data)
+
+# Check whether the Isolate IDs in both files align correctly
+sample_data$ID %in% tree$tip.label
+tree$tip.label %in% sample_data$ID 
+
+setdiff(sample_data$ID, tree$tip.label) #metadata ID that are not in tree 
+setdiff(tree$tip.label, sample_data$ID) #tree ID that are not in metadata 
+
+# Add midpoint root
+tree_mid <- midpoint(tree)
+tree_mid
+```
+
+Plot tree
+```{r}
+tree.1 <- ggtree(tree_mid)
+tree.1
+```
+
+Add root and scale bar
+```{r}
+tree.2 <- 
+  ggtree(tree_mid, branch.length = 0.5) %<+% sample_data +
+  geom_rootedge(rootedge = 0.0005) +   # add root 
+  #geom_rootpoint() +
+  geom_treescale(x=-0.005, y=50)
+tree.2
+```
+
+Heatmap 1: Continent
+```{r}
+continent <- data.frame("continent" = sample_data[,c("continent")])
+rownames(continent) <- sample_data$ID
+
+tree.3 <- tree.2 + new_scale_fill()
+h1 <- 
+  gheatmap(tree.3, continent, width = 0.05, color="white", offset=0.02,
+           colnames = FALSE) +
+  scale_fill_manual(name = "continent",
+                    values = c("#423E3B","#FF2E00","#FEA82F", 
+                               "#FFFECB","#5448C8"),
+                    na.value="white",  # set colour of NA values
+                    breaks = c("Oceania", "North America", "Europe", "Asia"),
+                    labels = c("Oceania", "North America", "Europe", "Asia")) +
+  theme(legend.position = "none")
+h1
+```
+
+Heatmap 2: Source
+```{r}
+sample_type <- data.frame("sample_type" = sample_data[,c("sample_type")])
+rownames(sample_type) <- sample_data$ID
+
+h2 <- h1 + new_scale_fill()
+h3 <- 
+  gheatmap(h2, sample_type, width = 0.05, color="white", offset=0.04,
+           colnames = FALSE) +
+  scale_fill_manual(name = "host",
+                    values = c("#f28482", "#8ecae6", "#84a59d"),
+                    na.value="white",  # set colour of NA values
+                    breaks = c("clinical/human", "animal", "environment"),
+                    labels = c("clinical/human", "animal", "environment")) +
+  theme(legend.position = "none")
+h3
+```
+
+Heat map 3: ST
+Only top 10 ST were annotated
+```{r}
+ST <- data.frame("ST" = sample_data[,c("ST")])
+rownames(ST) <- sample_data$ID
+sample_data$ST <- as.factor(sample_data$ST)  # convert into factor data type
+sample_data <- sample_data %>%
+  mutate(ST = case_when(
+    ST %in% c('80','22','132','324','184','32','650') ~ as.character(ST),
+    TRUE ~ 'others'  # Convert everything else into 'others'
+  ))
+
+ST <- data.frame("MLST" = sample_data[,c("ST")])
+rownames(ST) <- sample_data$ID
+
+h4 <- h3 + new_scale_fill()
+h5 <- 
+  gheatmap(h4, ST, width = 0.05, color="white", offset=0.06,
+           colnames = FALSE) +
+  #colnames = TRUE, colnames_position= "top",
+  #colnames_angle = 0, hjust = 0.5, 
+  #font.size=3, colnames_offset_y = 1) +
+  scale_fill_manual(name = "Sample source",
+                    values = c("#588157", "#390099", "#BAF2D8",
+                               "#F2BAC9","#669bbc",
+                               "#F2E2BA","#C49799","#ee9b00"), 
+                    na.value="white",  # set colour of NA values
+                    breaks = c('80','22','132','324','184','32','650'),
+                    labels = c('80','22','132','324','184','32','650')) +
+  theme(legend.position = 'bottom', 
+        legend.key.size = unit(0.2, 'cm'))
+h5
+```
+
+Heatmap 4: CC17
+```{r}
+sample_data$CC <- as.factor(sample_data$CC)
+CC <- data.frame("CC" = sample_data[,c("CC")])
+rownames(CC) <- sample_data$ID
+
+h6 <- h5 + new_scale_fill()
+h7 <- 
+  gheatmap(h6, CC, width = 0.05, color="white", offset=0.08,
+           colnames = FALSE) +
+  scale_fill_manual(name = "van_type",
+                    values = c("#c1121f"),
+                    na.value="white",  # set colour of NA values
+                    breaks = c("17"),
+                    labels = c("17")) +
+  theme(legend.position = "none")
+h7
+```
+
+Heatmap 5: van type
+```{r}
+van_operon <- data.frame("van_operon" = sample_data[,c("van_operon")])
+rownames(van_operon) <- sample_data$ID
+
+h8 <- h7 + new_scale_fill()
+h9 <- 
+  gheatmap(h8, van_operon, width = 0.05, color="white", offset=0.1,
+           colnames = FALSE) +
+  scale_fill_manual(name = "van_type",
+                    values = c("#219ebc","#fb8500"),
+                    na.value="white",  # set colour of NA values
+                    breaks = c("vanA", "vanD"),
+                    labels = c("vanA", "vanD")) +
+  theme(legend.position = "none")
+h9
+```
+
+Heatmap 6: mlplasmids
+```{r}
+mlplasmids_prediction <- data.frame("mlplasmids_prediction" = sample_data[,c("mlplasmids_prediction")])
+rownames(mlplasmids_prediction) <- sample_data$ID
+
+h10 <- h9 + new_scale_fill()
+h11 <- 
+  gheatmap(h10, mlplasmids_prediction, width = 0.05, color="white", offset=0.12,
+           colnames = FALSE) +
+  scale_fill_manual(name = "mlplasmids",
+                    values = c("#fca311","#a8dadc"),
+                    na.value="white",  # set colour of NA values
+                    breaks = c("Plasmid", "Chromosome"),
+                    labels = c("Plasmid", "Chromosome")) +
+  theme(legend.position = "none")
+h11
+```
+
+Heatmap 7: optrA context
+```{r}
+predicted_optrA_context <- data.frame("predicted_optrA_context" = sample_data[,c("predicted_optrA_context")])
+rownames(predicted_optrA_context) <- sample_data$ID
+
+h12 <- h11 + new_scale_fill()
+h13 <- 
+  gheatmap(h12, predicted_optrA_context, width = 0.05, color="white", offset=0.14,
+           colnames = FALSE) +
+  scale_fill_manual(name = "mlplasmids",
+                    values = c("#9b5de5","#f15bb5", "#fee440"),
+                    na.value="white",  # set colour of NA values
+                    breaks = c("optrA-erm", "Tn6261", "fexA-optrA-ermA"),
+                    labels = c("optrA-erm", "Tn6261", "fexA-optrA-ermA")) +
+  theme(legend.position = "none")
+h13
+```
+
+Save plot
+```{r}
+ggsave("figure_s2.pdf", h13, width=8, height=6, dpi=300)
+```
+
+
+# Figure S3
+
+## S3a - Efs
+
+Load data
+```{r}
+data <- read.csv("figure_s3/efs_data.csv")
+data
+```
+
+Count optrA variants
+```{r}
+count_variant <- 
+  data %>% dplyr::count(OptrA_variant) %>%
+  arrange(desc(n))
+count_variant
+```
+
+Then select only OptrA variants with (N >=5) and change others into "Others"
+```{r}
+data.1 <-
+  data %>%
+  mutate(
+    new_OptrAvariant = case_when(
+      OptrA_variant == "G40N, G393D" ~ "Others",
+      OptrA_variant == "T112K, Y176D, T481P" ~ "Others",
+      OptrA_variant == "D401E" ~ "Others",
+      OptrA_variant == "T112K, S147L, Y176D, T481P" ~ "Others",
+      OptrA_variant == "Y176D, G393D, I622M" ~ "Others",
+      OptrA_variant == "truncated" ~ "Others",
+      OptrA_variant == "G393D" ~ "Others",
+      OptrA_variant == "G40N, I287K, I622M" ~ "Others",
+      OptrA_variant == "G87D, Y176D, G393D" ~ "Others",
+      OptrA_variant == "Q219H" ~ "Others",
+      OptrA_variant == "S147F, I287K" ~ "Others",
+      OptrA_variant == "Y176D, A350V, G393D" ~ "Others",
+      OptrA_variant == "Y176D, G394S" ~ "Others",
+      OptrA_variant == "MANY" ~ "Others",
+      TRUE ~ OptrA_variant   # keep all other values unchanged
+    )
+  )
+data.1
+```
+
+Make plot
+```{r}
+plot <- 
+  ggplot(data.1, aes(x = year, fill= new_OptrAvariant)) + 
+  geom_bar(color = "#023047", width = 0.5) +
+  xlab("Collection year")+
+  ylab("Number of isolates") +
+  theme(axis.title.x = element_text(size = 15, colour = "black", margin = margin(10, 0, 10, 0), face = "bold"),
+        axis.text.x = element_text(size = 15, color = "black",),
+        axis.text.y = element_text(size = 15, color = "black"),
+        axis.title.y = element_text(colour = "black", margin = margin(0, 10, 0, 10)))+
+  scale_fill_manual(values = c("wild type"="#606c38", 
+                               "I104R, Y176D, E256K"="#283618", 
+                               "Y176D, T481P"="#dda15e", 
+                               "Y176D, G393D"="#2A9D8F", 
+                               "T112K, Y176D"="#c1121f", 
+                               "Y176D, I622M"="#780000",
+                               "Y176D"="#E76F51", 
+                               "Y176D, D247N, G393D, I622M"="#0077b6", 
+                               "G40N, I287K, G393D"="#ffba08",
+                               "Others"="white",
+                               na.value = "white"))+
+  theme_bw()
+plot
+
+ggsave("figure_s3a.pdf", plot, width = 8, height = 6)
+```
+
+
+## S3b - Efm
+
+Load data
+```{r}
+data <- read.csv("figure_s3/efm_data.csv")
+data
+```
+
+Count optrA variants
+```{r}
+count_variant <- 
+  data %>% dplyr::count(OptrA_variant) %>%
+  arrange(desc(n))
+count_variant
+```
+
+Then select only OptrA variants with (N >=5) and change others into "Others"
+```{r}
+data.1 <-
+  data %>% 
+  mutate(new_OptrAvariant = case_when(
+                           OptrA_variant == "Y176D, A176V, G393D" ~ "Others",
+                           OptrA_variant == "Y176D, D247N, G393D, I622M" ~ "Others",
+                           OptrA_variant == "Y176D, T481P" ~ "Others",
+                           OptrA_variant == "T94K, Y176D" ~ "Others",
+                           OptrA_variant == "I104R, Y176D, E256K" ~ "Others",
+                           OptrA_variant == "S147F, Y176D, I287K, A350V, G393D, S411G, T481P" ~ "Others",
+                           OptrA_variant == "Y176D, G393D, I622M" ~ "Others",
+                           OptrA_variant == "Y176D, L213P, I622M" ~ "Others",
+                           OptrA_variant == "MANY" ~ "Others",
+                           OptrA_variant == "truncated" ~ "Others",
+                           TRUE ~ OptrA_variant   # keep all other values unchanged
+                           ))
+data.1
+```
+
+Make plot
+```{r}
+plot <- 
+  ggplot(data.1, aes(x = year, fill= OptrA_variant)) + 
+  geom_bar(color = "#023047", width = 0.5) +
+  xlab("Collection year")+
+  ylab("Number of isolates") +
+  theme(axis.title.x = element_text(size = 15, colour = "black", margin = margin(10, 0, 10, 0), face = "bold"),
+        axis.text.x = element_text(size = 15, color = "black",),
+        axis.text.y = element_text(size = 15, color = "black"),
+        axis.title.y = element_text(colour = "black", margin = margin(0, 10, 0, 10)))+
+  scale_fill_manual(values = c("Y176D, G393D"="#2A9D8F", 
+                               "Y176D, I622M"="#780000", 
+                               "T113K, S147L, Y176D, T481P"="#a2d2ff", 
+                               "wild type"="#606C38", 
+                               "G40D, Y176D, G393D"="#E4C1F9", 
+                               "Y176D"="#E76F51",
+                               "T113K, S147L, Y176D, I287K"="#a7c957", 
+                               "Others"="white",
+                               na.value = "white"))+
+  theme_bw()
+plot
+
+ggsave("figure_s3b.pdf", plot, width = 8, height = 6)
+```
+
+
+# Figure S4
+
+Figure S4 was created using Clinker.
+
+
+# Figure S5
+
+Figure S5 was created using Clinker.
+
+
+# Figure S6
+
+Tn6674
+```{r}
+data <- read.csv("figure_s6/Tn6674_metadata.csv")
+data
+
+plot <- 
+  ggplot(data, aes(x = ST, fill= Tn6674)) + 
+  geom_bar(color = "#023047", width = 0.5) +
+  xlab("OptrA variant")+
+  ylab("Number of isolates") +
+  theme(axis.title.x = element_text(size = 15, colour = "black", margin = margin(10, 0, 10, 0), face = "bold"),
+        axis.text.x = element_text(size = 15, color = "black",),
+        axis.text.y = element_text(size = 15, color = "black"),
+        axis.title.y = element_text(colour = "black", margin = margin(0, 10, 0, 10)))+
+  scale_fill_manual(values = c("yes"="#c1121f", "no"="white"))+
+  theme_bw()
+plot
+
+ggsave("plot_1.pdf", plot, width = 8, height = 6)
+```
+
+fexA-optrA-ermA
+```{r}
+data <- read.csv("figure_s6/plasmid_metadata.csv")
+data
+
+plot <- 
+  ggplot(data, aes(x = ST, fill= plasmid)) + 
+  geom_bar(color = "#023047", width = 0.5) +
+  xlab("OptrA variant")+
+  ylab("Number of isolates") +
+  theme(axis.title.x = element_text(size = 15, colour = "black", margin = margin(10, 0, 10, 0), face = "bold"),
+        axis.text.x = element_text(size = 15, color = "black",),
+        axis.text.y = element_text(size = 15, color = "black"),
+        axis.title.y = element_text(colour = "black", margin = margin(0, 10, 0, 10)))+
+  scale_fill_manual(values = c("yes"="#0077B6", "no"="white"))+
+  theme_bw()
+plot
+
+ggsave("plot_2.pdf", plot, width = 8, height = 6)
+```
+
+Then manually combine both plots.
+
+
+# Figure S7
+
+Figure S7 was created using Clinker.
+
+
+# Figure S8
+
+Figure S8 was created using Clinker.
+
+
+
+
+
+
+
+
+
+
+# Figure S9
+
+## S9a - efs optrA plasmid
+
+Load data
+```{r}
+data <- read.csv("figure_s9/coverage_optrAplasmids.csv")
+data
+
+ggplot(data, aes(x = position, y = total_coverage)) +
+  geom_line() +
+  geom_area(fill = "black", alpha = 0.5) + # set area under graph color and transparency
+  labs(x = "Position", y = "Total Coverage", title = "Coverage Distribution") +
+  theme_minimal()
+
+# Save plot into object
+p <- ggplot(data, aes(x = position, y = total_coverage)) +
+  geom_line() +
+  geom_area(fill = "black", alpha = 1) + # set area under graph color and transparency
+  labs(x = "Position", y = "Total Coverage", title = "Coverage Distribution") +
+  theme_minimal()
+p
+
+ggsave("figure_s9a.pdf", p, width=8, height=4, dpi=300)
+```
+
+## S9b - efs optrA genomes
+
+Load data
+```{r}
+data <- read.csv("figure_s9/coverage_optrAgenomes.csv")
+data
+
+ggplot(data, aes(x = position, y = total_coverage)) +
+  geom_line() +
+  geom_area(fill = "black", alpha = 0.5) + # set area under graph color and transparency
+  labs(x = "Position", y = "Total Coverage", title = "Coverage Distribution") +
+  theme_minimal()
+
+# Save plot into object
+p <- ggplot(data, aes(x = position, y = total_coverage)) +
+  geom_line() +
+  geom_area(fill = "black", alpha = 1) + # set area under graph color and transparency
+  labs(x = "Position", y = "Total Coverage", title = "Coverage Distribution") +
+  theme_minimal()
+p
+
+ggsave("figure_s9b.pdf", p, width=8, height=4, dpi=300)
+```
+
+Annotations were manually added.
+
+
+# Figure S10
+
+## S10a - efm optrA plasmids
+
+Load data
+```{r}
+data <- read.csv("figure_s10/coverage_optrAplasmids.csv")
+data
+
+ggplot(data, aes(x = position, y = total_coverage)) +
+  geom_line() +
+  geom_area(fill = "black", alpha = 0.5) + # set area under graph color and transparency
+  labs(x = "Position", y = "Total Coverage", title = "Coverage Distribution") +
+  theme_minimal()
+
+# Save plot into object
+p <- ggplot(data, aes(x = position, y = total_coverage)) +
+  geom_line() +
+  geom_area(fill = "black", alpha = 1) + # set area under graph color and transparency
+  labs(x = "Position", y = "Total Coverage", title = "Coverage Distribution") +
+  theme_minimal()
+p
+
+ggsave("figure_s10a.pdf", p, width=8, height=4, dpi=300)
+```
+
+## S10b - efm optrA genomes
+
+Load data
+```{r}
+data <- read.csv("figure_s10/coverage_optrAgenomes.csv")
+data
+
+ggplot(data, aes(x = position, y = total_coverage)) +
+  geom_line() +
+  geom_area(fill = "black", alpha = 0.5) + # set area under graph color and transparency
+  labs(x = "Position", y = "Total Coverage", title = "Coverage Distribution") +
+  theme_minimal()
+
+# Save plot into object
+p <- ggplot(data, aes(x = position, y = total_coverage)) +
+  geom_line() +
+  geom_area(fill = "black", alpha = 1) + # set area under graph color and transparency
+  labs(x = "Position", y = "Total Coverage", title = "Coverage Distribution") +
+  theme_minimal()
+p
+
+ggsave("figure_s10b.pdf", p, width=8, height=4, dpi=300)
+```
+
+Annotations were manually added.
+
