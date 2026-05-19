@@ -1,0 +1,150 @@
+﻿ID,country,continent,year,sample_type,ST,CC,lzd_genotype,van_operon,mlplasmids_prediction,predicted_optrA_context
+GCA_002973675.1,France,Europe,2015,clinical/human,650,17,"cfr(D), optrA",vanA,Plasmid,optrA-erm
+GCA_002973715.1,India,Asia,2018,clinical/human,80,17,"cfr(D), optrA",vanA,Chromosome,optrA-erm
+GCA_002973755.2,India,Asia,2019,clinical/human,17,17,"cfr(D), optrA",vanA,Plasmid,Tn6261
+GCA_004103165.1,Germany,Europe,2016,clinical/human,195,17,"cfr(D), optrA",,Plasmid,fexA-optrA-ermA
+GCA_004332055.1,India,Asia,2019,clinical/human,32,17,"cfr(D), optrA",vanA,Plasmid,Tn6261
+GCA_005517315.1,Reunion,Europe,2019,clinical/human,80,17,"cfr(D), optrA",vanA,Plasmid,Tn6261
+GCA_005576735.1,Reunion,Europe,2022,clinical/human,17,17,"cfr(D), optrA",vanA,Chromosome,Tn6261
+GCA_012932975.2,France,Europe,2021,clinical/human,80,,"cfr(D), optrA",vanA,Plasmid,Tn6261
+GCA_012933185.1,France,Europe,2020,clinical/human,80,17,"cfr(D), optrA",vanA,Chromosome,optrA-erm
+GCA_013326905.1,India,Asia,2017,clinical/human,1532,17,"cfr(D), optrA",vanA,Chromosome,optrA-erm
+GCA_015361995.1,India,Asia,2019,clinical/human,80,17,"cfr(D), optrA",vanA,Plasmid,
+GCA_015642685.1,France,Europe,2016,clinical/human,22,,optrA,,Chromosome,optrA-erm
+GCA_016743855.1,France,Europe,2015,clinical/human,868,17,optrA,vanA,Chromosome,optrA-erm
+GCA_017815695.1,China,Asia,2017,clinical/human,80,,optrA,,Plasmid,optrA-erm
+GCA_018517065.1,India,Asia,2019,clinical/human,324,17,optrA,vanA,Plasmid,Tn6261
+GCA_018517085.1,India,Asia,2019,clinical/human,650,17,optrA,,Plasmid,optrA-erm
+GCA_019175425.1,France,Europe,2017,clinical/human,957,17,"optrA, poxtA",,Plasmid,Tn6261
+GCA_019175445.1,France,Europe,2016,clinical/human,,,"optrA, poxtA",,Chromosome,optrA-erm
+GCA_019175525.1,China,Asia,2018,clinical/human,25,,"optrA, poxtA",,Plasmid,
+GCA_019356355.1,China,Asia,2020,clinical/human,,,"optrA, poxtA",,Plasmid,
+GCA_019731315.1,Reunion,Europe,2017,clinical/human,1577,17,optrA,vanA,Plasmid,Tn6261
+GCA_019992745.1,France,Europe,2020,clinical/human,,,"optrA, poxtA",vanD,Plasmid,Tn6261
+GCA_019992785.1,France,Europe,2020,clinical/human,156,,optrA,vanA,Plasmid,fexA-optrA-ermA
+GCA_021121175.1,France,Europe,2019,clinical/human,22,,"optrA, poxtA",,Plasmid,
+GCA_021121205.1,France,Europe,2019,clinical/human,8,17,optrA,,Plasmid,
+GCA_021121485.1,Reunion,Europe,2017,clinical/human,26,17,optrA,vanA,Plasmid,fexA-optrA-ermA
+GCA_021122155.1,France,Europe,2017,clinical/human,32,17,"optrA, poxtA",,Chromosome,optrA-erm
+GCA_021122225.1,China,Asia,2021,clinical/human,104,17,optrA,,Plasmid,
+GCA_021122265.1,Denmark,Europe,2020,clinical/human,56,17,"optrA, poxtA",,Plasmid,
+GCA_021122345.1,South Korea,Asia,2019,clinical/human,18,17,optrA,,Plasmid,fexA-optrA-ermA
+GCA_021122385.1,South Korea,Asia,2019,clinical/human,324,17,optrA,,Plasmid,
+GCA_021122445.1,USA,North America,2016,animal,957,17,"cfr, optrA",,Plasmid,Tn6261
+GCA_021122645.1,,,2022,,,,"cfr(D), optrA",,Plasmid,fexA-optrA-ermA
+GCA_021122785.1,Canada,North America,2019,animal,140,,optrA,,Plasmid,
+GCA_021122825.1,Denmark,Europe,2019,animal,133,17,"optrA, poxtA",,Plasmid,
+GCA_021123005.1,China,Asia,2020,environment,,,optrA,,Plasmid,
+GCA_021123075.1,Switzerland,Europe,2019,animal,1023,,"optrA, poxtA",,Plasmid,
+GCA_021123205.1,Switzerland,Europe,2019,animal,,,optrA,,Plasmid,
+GCA_021123525.1,Switzerland,Europe,2019,animal,137,17,"optrA, poxtA",,Plasmid,
+GCA_021123545.1,China,Asia,2019,animal,22,,optrA,,Chromosome,optrA-erm
+GCA_021124145.1,China,Asia,2020,animal,1146,,"optrA, poxtA",,Chromosome,
+GCA_021124165.1,Belgium,Europe,2019,,278,17,"optrA, poxtA",,Plasmid,
+GCA_021124315.1,Belgium,Europe,2019,,,,optrA,,Plasmid,
+GCA_021124445.1,Belgium,Europe,2019,,1023,17,"optrA, poxtA",,Plasmid,
+GCA_021311015.1,Belgium,Europe,2019,,80,17,optrA,,Chromosome,Tn6261
+GCA_021311095.1,Belgium,Europe,2019,,761,,optrA,,Chromosome,optrA-erm
+GCA_021560195.1,Belgium,Europe,2019,,29,17,"optrA, poxtA",,Plasmid,fexA-optrA-ermA
+GCA_023182815.2,Belgium,Europe,2019,,22,17,optrA,,Plasmid,Tn6261
+GCA_023182835.2,Belgium,Europe,2019,,56,17,"optrA, poxtA",,Plasmid,Tn6261
+GCA_023299805.1,Belgium,Europe,2019,,,,"optrA, poxtA",,Plasmid,
+GCA_025476665.1,Belgium,Europe,2018,,868,,"optrA, poxtA",,Plasmid,
+GCA_025476955.1,Belgium,Europe,2019,,,,"optrA, poxtA",,Chromosome,Tn6261
+GCA_025477335.1,Belgium,Europe,2019,,97,,optrA,,Plasmid,Tn6261
+GCA_025477655.1,Belgium,Europe,2019,,761,,"optrA, poxtA",,Chromosome,optrA-erm
+GCA_025477735.1,Belgium,Europe,2019,,,,"optrA, poxtA",,Chromosome,optrA-erm
+GCA_025477835.1,Belgium,Europe,2019,,269,,"optrA, poxtA",,Plasmid,
+GCA_025477945.1,Belgium,Europe,2019,,80,,"optrA, poxtA",,Chromosome,optrA-erm
+GCA_025481835.1,Belgium,Europe,2019,,80,17,"optrA, poxtA",,Chromosome,Tn6261
+GCA_025481845.1,Belgium,Europe,2019,,324,,optrA,,Plasmid,Tn6261
+GCA_025515395.1,Belgium,Europe,2019,,124,,optrA,,Chromosome,fexA-optrA-ermA
+GCA_025629065.1,Belgium,Europe,2019,,533,,optrA,,Chromosome,optrA-erm
+GCA_025641905.1,Belgium,Europe,2019,,184,,"optrA, poxtA",,Chromosome,optrA-erm
+GCA_025753015.1,China,Asia,2016,animal,650,17,"optrA, poxtA",,Plasmid,fexA-optrA-ermA
+GCA_025753055.1,China,Asia,2018,animal,636,17,"optrA, poxtA",,Chromosome,optrA-erm
+GCA_025753095.1,China,Asia,2018,animal,,17,optrA,,Plasmid,fexA-optrA-ermA
+GCA_025753115.1,South Korea,Asia,2020,,,,optrA,,Plasmid,fexA-optrA-ermA
+GCA_025753135.1,China,Asia,2018,animal,1660,,"optrA, poxtA",,Chromosome,
+GCA_025753145.1,China,Asia,2021,animal,,,optrA,,Plasmid,fexA-optrA-ermA
+GCA_025753175.1,China,Asia,2020,animal,324,,"optrA, poxtA",,Plasmid,Tn6261
+GCA_025753195.1,China,Asia,2020,animal,,,optrA,,Plasmid,fexA-optrA-ermA
+GCA_025753215.1,China,Asia,2020,animal,,,optrA,,Plasmid,fexA-optrA-ermA
+GCA_025753255.1,China,Asia,2020,animal,,,optrA,,Plasmid,fexA-optrA-ermA
+GCA_025753345.1,China,Asia,2020,animal,,,optrA,,Plasmid,fexA-optrA-ermA
+GCA_025753575.1,China,Asia,2020,animal,190,17,"optrA, poxtA",,Plasmid,fexA-optrA-ermA
+GCA_025753655.1,China,Asia,2020,animal,1630,,optrA,,Chromosome,
+GCA_025753745.1,China,Asia,2020,animal,184,,optrA,,Plasmid,fexA-optrA-ermA
+GCA_025800545.1,China,Asia,2020,animal,56,,optrA,,Chromosome,optrA-erm
+GCA_025800625.1,China,Asia,2020,animal,636,,"optrA, poxtA",,Chromosome,optrA-erm
+GCA_025847735.1,China,Asia,2020,animal,,,optrA,,Plasmid,fexA-optrA-ermA
+GCA_025913595.1,China,Asia,2020,animal,,,"optrA, poxtA",,Chromosome,
+GCA_025916235.1,China,Asia,2020,animal,,,"optrA, poxtA",,Plasmid,
+GCA_025953925.1,China,Asia,2020,animal,80,17,"optrA, poxtA",,Chromosome,
+GCA_025953965.1,China,Asia,2020,animal,80,,"optrA, poxtA",,Chromosome,optrA-erm
+GCA_026202455.1,China,Asia,2020,animal,323,,optrA,,Chromosome,
+GCA_026203285.1,China,Asia,2020,animal,,,"optrA, poxtA",,Plasmid,fexA-optrA-ermA
+GCA_026203655.1,China,Asia,2020,animal,,,optrA,,Plasmid,fexA-optrA-ermA
+GCA_026203855.1,China,Asia,2021,animal,184,17,"optrA, poxtA",,Plasmid,fexA-optrA-ermA
+GCA_026204135.1,China,Asia,2021,animal,,,"optrA, poxtA",,Plasmid,fexA-optrA-ermA
+GCA_026204185.1,China,Asia,2021,animal,1630,,"optrA, poxtA",,Chromosome,
+GCA_027944535.1,China,Asia,2021,animal,158,,"optrA, poxtA",,Chromosome,fexA-optrA-ermA
+GCA_028784175.1,China,Asia,2021,animal,262,,optrA,,Plasmid,
+GCA_028891525.1,China,Asia,2021,animal,,,optrA,,Plasmid,fexA-optrA-ermA
+GCA_030064735.1,China,Asia,2022,environment,,,"optrA, poxtA",,Chromosome,optrA-erm
+GCA_030179055.1,China,Asia,2021,environment,590,,optrA,,Plasmid,
+GCA_030179115.1,China,Asia,2019,animal,,,optrA,,Chromosome,optrA-erm
+GCA_030179135.1,China,Asia,2019,animal,,,"optrA, poxtA",,Plasmid,fexA-optrA-ermA
+GCA_030179235.1,China,Asia,2019,animal,,,optrA,,Chromosome,optrA-erm
+GCA_030179275.1,China,Asia,2019,animal,22,,optrA,,Chromosome,optrA-erm
+GCA_030179285.1,China,Asia,2019,animal,,,optrA,,Chromosome,optrA-erm
+GCA_030179335.1,China,Asia,2019,environment,,17,optrA,,Chromosome,
+GCA_030179375.1,China,Asia,2019,environment,,,optrA,,Chromosome,optrA-erm
+GCA_030179465.1,China,Asia,2019,environment,1507,,optrA,,Chromosome,optrA-erm
+GCA_030179505.1,China,Asia,2019,animal,29,,"optrA, poxtA",,Chromosome,
+GCA_030340025.1,China,Asia,2019,animal,1263,,optrA,,Chromosome,fexA-optrA-ermA
+GCA_030340045.1,China,Asia,2019,environment,80,17,"optrA, poxtA",,Plasmid,fexA-optrA-ermA
+SRR10094574,Pakistan,Asia,2016,clinical/human,,,"cfr(D), optrA, poxtA",vanA,Chromosome,
+SRR10094578,Pakistan,Asia,2016,clinical/human,132,17,"cfr(D), optrA, poxtA",vanA,Chromosome,
+SRR10094580,Pakistan,Asia,2016,clinical/human,,,"cfr(D), optrA, poxtA",vanA,Chromosome,
+SRR10094581,Pakistan,Asia,2016,clinical/human,,,"cfr(D), optrA, poxtA",vanA,Chromosome,
+SRR10094582,Pakistan,Asia,2016,clinical/human,,,"cfr(D), optrA, poxtA",vanA,Chromosome,
+SRR10094586,Pakistan,Asia,2016,clinical/human,,,"cfr(D), optrA, poxtA",vanA,Chromosome,
+SRR10094597,Pakistan,Asia,2016,clinical/human,,,"cfr(D), optrA",vanA,Plasmid,
+SRR10094598,Pakistan,Asia,2016,clinical/human,132,17,"cfr(D), optrA, poxtA",vanA,Chromosome,
+SRR10094599,Pakistan,Asia,2016,clinical/human,,,"cfr(D), optrA, poxtA",vanA,Chromosome,
+SRR10094600,Pakistan,Asia,2016,clinical/human,,,"cfr(D), optrA, poxtA",vanA,Chromosome,
+SRR10094601,Pakistan,Asia,2016,clinical/human,,,"cfr(D), optrA, poxtA",vanA,Chromosome,
+SRR10094602,Pakistan,Asia,2016,clinical/human,,,"cfr(D), optrA, poxtA",vanA,Chromosome,
+SRR10094603,Pakistan,Asia,2016,clinical/human,,,"cfr(D), optrA, poxtA",vanA,Chromosome,
+SRR10094604,Pakistan,Asia,2016,clinical/human,,,"cfr(D), optrA, poxtA",vanA,Chromosome,
+SRR10094605,Pakistan,Asia,2016,clinical/human,132,17,"cfr(D), optrA, poxtA",vanA,Chromosome,
+SRR10094607,Pakistan,Asia,2016,clinical/human,,,"cfr(D), optrA, poxtA",vanA,Chromosome,
+SRR10094609,Pakistan,Asia,2016,clinical/human,80,17,"cfr(D), optrA, poxtA",vanA,Chromosome,
+SRR10094612,Pakistan,Asia,2016,clinical/human,,,"cfr(D), optrA",vanA,Chromosome,
+SRR10094613,Pakistan,Asia,2016,clinical/human,132,17,"cfr(D), optrA, poxtA",vanA,Chromosome,
+SRR10094619,Pakistan,Asia,2016,clinical/human,,,"cfr(D), optrA, poxtA",vanA,Chromosome,
+SRR10094620,Pakistan,Asia,2016,clinical/human,,,"cfr(D), optrA, poxtA",vanA,Chromosome,
+SRR10094621,Pakistan,Asia,2016,clinical/human,,,"cfr(D), optrA, poxtA",vanA,Chromosome,
+SRR10276527,Australia,Oceania,2019,clinical/human,872,17,"cfr(D), optrA",vanA,Chromosome,optrA-erm
+SRR13080468,Belgium,Europe,2018,clinical/human,202,17,optrA,,Chromosome,optrA-erm
+SRR13902732,India,Asia,2019,clinical/human,80,17,optrA,,Plasmid,Tn6261
+SRR13902733,India,Asia,2020,clinical/human,1380,17,"cfr(D), optrA",vanA,Chromosome,optrA-erm
+SRR14024963,Denmark,Europe,2018,clinical/human,32,17,"cfr(D), optrA, poxtA",vanA,Plasmid,
+SRR14024972,Thailand,Asia,2018,clinical/human,,,"cfr(D), optrA",vanA,Chromosome,optrA-erm
+SRR14024974,India,Asia,2021,clinical/human,,17,"cfr(D), optrA",vanA,Chromosome,
+SRR14024975,Canada,North America,2015,animal,944,17,"cfr, optrA",,Chromosome,optrA-erm
+SRR14024978,Canada,North America,2015,animal,,,"optrA, poxtA",,Chromosome,
+SRR14024984,Canada,North America,2015,animal,,,optrA,,Chromosome,
+SRR14024990,Canada,North America,2015,animal,,,optrA,,Chromosome,
+SRR14026497,Canada,North America,2016,animal,,,"optrA, poxtA",,Chromosome,optrA-erm
+SRR14026508,Canada,North America,2015,animal,212,,"optrA, poxtA",,Chromosome,
+SRR14026532,Canada,North America,2015,animal,,,"optrA, poxtA",,Chromosome,
+SRR14889759,Canada,North America,2015,environment,132,,optrA,,Chromosome,
+SRR19369843,Canada,North America,2015,animal,,,optrA,,Chromosome,optrA-erm
+SRR21102107,Canada,North America,2015,environment,104,,"optrA, poxtA",,Plasmid,
+SRR21102110,Belgium,Europe,2020,animal,1628,,"optrA, poxtA",,Chromosome,fexA-optrA-ermA
+SRR21102115,Belgium,Europe,2020,animal,22,17,"optrA, poxtA",,Plasmid,
+SRR21102125,Belgium,Europe,2020,animal,324,17,"optrA, poxtA",,Plasmid,Tn6261
+SRR21102131,Belgium,Europe,2019,animal,55,17,"optrA, poxtA",,Chromosome,optrA-erm
+SRR23047325,Belgium,Europe,2019,animal,80,17,"optrA, poxtA",,Plasmid,Tn6261
