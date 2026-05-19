@@ -1,0 +1,28 @@
+---
+title: "Vic LRE manuscript"
+author: "Jia Qi Beh"
+date: "2026-05-18"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Global OptrA manuscript - data
+
+This document contains all paths to MDU server directories that contain the input sequences for the manuscript 'Global dissemination of optrA-mediated linezolid resistance in enterococci'.
+
+
+# Global genomes
+
+Enterococcus faecium = /home/jbbeh/BACKUP/OH_OptrA/Efm/global_optrA_Efm_149_filter1000bp
+Enterococcus faecalis = /home/jbbeh/BACKUP/OH_OptrA/Efs/global_optrA_Efs_416_filter1000bp
+
+
+# Plasmids
+
+Enterococcus faecium optrA plasmids = /home/jbbeh/BACKUP/OH_OptrA/Efm/efm_optrA_plasmid_assemblies_31
+Enterococcus faecalis optrA plasmids = /home/jbbeh/BACKUP/OH_OptrA/Efs/efs_PLSDB_optrA_plasmid_nonredundant_50
+
