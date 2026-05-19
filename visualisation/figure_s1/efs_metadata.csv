@@ -1,0 +1,417 @@
+﻿ID,country,continent,year,sample_type,ST,lzd_genotype,mlplasmids_prediction,predicted_optrA_context,Tn6674_variant
+DRR126419,Japan,Asia,2017,human/clinical,729,"cfr(B), optrA",Chromosome,fexA-optrA,
+DRR400396,Japan,Asia,2021,human/clinical,476,optrA,Chromosome,Tn6674,truncated
+GCA_001806515.1,Malaysia,Asia,2012,,754,optrA,Chromosome,,
+GCA_001878735.4,Brazil,South America,2013,animal,29,"cfr, optrA",Plasmid,,
+GCA_002009465.1,Malaysia,Asia,2021,animal,755,optrA,Chromosome,Tn6674,truncated
+GCA_002009545.1,Malaysia,Asia,2021,animal,476,optrA,Chromosome,Tn6674,truncated
+GCA_002009565.1,Malaysia,Asia,2021,animal,756,optrA,Chromosome,Tn6674,truncated
+GCA_002220885.1,Tunisia,Africa,2014,environment,86,optrA,Chromosome,Tn6674,truncated
+GCA_002250145.1,Colombia,South America,2015,animal,16,optrA,Chromosome,,
+GCA_004168065.1,Tunisia,Africa,2017,animal,476,optrA,Chromosome,fexA-optrA,
+GCA_004168075.1,Tunisia,Africa,2017,animal,859,optrA,Plasmid,fexA-optrA-ermA,
+GCA_004168115.1,Tunisia,Africa,2017,animal,21,optrA,Chromosome,Tn6674,
+GCA_004332015.1,USA,North America,2013,animal,141,optrA,Plasmid,fexA-optrA,
+GCA_004332035.1,USA,North America,2014,animal,489,optrA,Plasmid,fexA-optrA,
+GCA_009498155.3,Brazil,South America,2013,animal,591,optrA,Plasmid,Tn6674,
+GCA_009498175.3,Colombia,South America,2013,animal,710,optrA,Plasmid,,
+GCA_009830485.1,China,Asia,2016,animal,230,optrA,Plasmid,fexA-optrA-ermA,
+GCA_009830505.1,China,Asia,2016,animal,480,optrA,Chromosome,,
+GCA_009830525.1,China,Asia,2016,environment,910,optrA,Chromosome,fexA-optrA-ermA,
+GCA_009830535.1,China,Asia,2016,environment,632,optrA,Chromosome,fexA-optrA-ermA,
+GCA_009830565.1,China,Asia,2016,environment,474,optrA,Chromosome,,
+GCA_009830585.1,China,Asia,2016,environment,16,optrA,Chromosome,,
+GCA_009830635.1,China,Asia,2016,environment,476,optrA,Chromosome,,
+GCA_009830655.1,China,Asia,2016,environment,-,optrA,Chromosome,Tn6674,truncated
+GCA_009830675.1,China,Asia,2016,animal,476,optrA,Chromosome,,
+GCA_009830715.1,China,Asia,2016,animal,170,optrA,Chromosome,fexA-optrA-ermA,
+GCA_009830735.1,China,Asia,2016,animal,116,optrA,Chromosome,fexA-optrA-ermA,
+GCA_009830765.1,China,Asia,2016,animal,773,optrA,Chromosome,fexA-optrA-ermA,
+GCA_009830775.1,China,Asia,2016,animal,256,optrA,Chromosome,Tn6674,WT
+GCA_009830815.1,China,Asia,2016,animal,16,optrA,Chromosome,fexA-optrA,
+GCA_009830835.1,China,Asia,2016,animal,16,optrA,Chromosome,fexA-optrA,
+GCA_009830855.1,China,Asia,2016,animal,59,optrA,Plasmid,fexA-optrA-ermA,
+GCA_009914685.3,China,Asia,2016,animal,330,optrA,Chromosome,,
+GCA_011193375.1,China,Asia,2016,animal,916,optrA,Chromosome,Tn6674,truncated
+GCA_014212115.1,South Korea,Asia,2016,animal,476,optrA,Chromosome,Tn6674,truncated
+GCA_014212215.1,South Korea,Asia,2016,animal,-,optrA,Chromosome,Tn6674,WT
+GCA_014212225.1,South Korea,Asia,2016,animal,729,optrA,Plasmid,fexA-optrA,
+GCA_014854875.1,China,Asia,2016,environment,207,optrA,Chromosome,fexA-optrA-ermA,
+GCA_015234285.1,Switzerland,Europe,2019,environment,16,"cfr(D), optrA",Chromosome,Tn6674,truncated
+GCA_015292605.1,Spain,Europe,2016,clinical,585,optrA,Plasmid,fexA-optrA,
+GCA_015292825.1,USA,North America,2020,,-,optrA,Chromosome,fexA-optrA-ermA,
+GCA_015293145.1,Spain,Europe,2016,clinical,-,optrA,Chromosome,,
+GCA_015293385.1,China,Asia,2017,environment,32,optrA,Chromosome,fexA-optrA-ermA,
+GCA_015293445.1,China,Asia,2017,environment,-,optrA,Chromosome,fexA-optrA-ermA,
+GCA_015294025.1,China,Asia,2017,environment,-,optrA,Chromosome,fexA-optrA-ermA,
+GCA_015294225.1,Spain,Europe,2016,clinical,474,optrA,Chromosome,,
+GCA_015300025.1,USA,North America,2019,animal,16,optrA,Chromosome,,
+GCA_015300605.1,USA,North America,2019,animal,506,optrA,Chromosome,Tn6674,
+GCA_015315065.1,Colombia,South America,2011,animal,-,optrA,Chromosome,fexA-optrA,
+GCA_015315105.1,Colombia,South America,2011,animal,-,optrA,Plasmid,fexA-optrA,
+GCA_015315485.1,USA,North America,2020,,-,optrA,Plasmid,,
+GCA_015690905.1,USA,North America,2020,animal,19,optrA,Plasmid,,
+GCA_015919065.1,USA,North America,2020,animal,-,optrA,Chromosome,Tn6674,
+GCA_015920145.1,USA,North America,2020,animal,207,optrA,Plasmid,,
+GCA_015958805.1,Denmark,Europe,2017,animal,22,optrA,Plasmid,fexA-optrA,
+GCA_016636325.1,USA,North America,2020,animal,631,optrA,Chromosome,,
+GCA_016847365.1,Belgium,Europe,2019,clinical,480,optrA,Chromosome,fexA-optrA-ermA,
+GCA_016917995.1,Italy,Europe,2018,environment,585,optrA,Chromosome,fexA-optrA-ermA,
+GCA_016993575.1,USA,North America,2020,animal,-,optrA,Chromosome,fexA-optrA-ermA,
+GCA_017286715.1,USA,North America,2019,animal,-,optrA,Chromosome,,
+GCA_018087365.1,Colombia,South America,2016,animal,-,optrA,Chromosome,fexA-optrA,
+GCA_018222085.1,USA,North America,2021,animal,-,optrA,Plasmid,,
+GCA_018253765.1,China,Asia,2017,environment,-,optrA,Chromosome,Tn6674,WT
+GCA_018253815.1,China,Asia,2017,environment,256,optrA,Chromosome,Tn6674,WT
+GCA_018253835.1,China,Asia,2017,environment,618,optrA,Chromosome,Tn6674,truncated
+GCA_018253895.1,China,Asia,2017,environment,-,optrA,Chromosome,Tn6674,WT
+GCA_019164975.1,Pakistan,Asia,2019,others,53,optrA,Chromosome,fexA-optrA-ermA,
+GCA_019195415.1,China,Asia,2019,animal,16,optrA,Plasmid,fexA-optrA-ermA,
+GCA_019201565.1,Switzerland,Europe,2020,environment,585,optrA,Plasmid,fexA-optrA,
+GCA_019201575.1,Switzerland,Europe,2020,environment,476,optrA,Chromosome,Tn6674,truncated
+GCA_019201635.1,Switzerland,Europe,2020,environment,506,optrA,Chromosome,Tn6674,truncated
+GCA_019222705.1,China,Asia,2019,environment,-,optrA,Plasmid,,
+GCA_019340345.1,USA,North America,2020,others,-,optrA,Chromosome,,
+GCA_019352735.1,Portugal,Europe,2019,others,674,optrA,Plasmid,fexA-optrA,
+GCA_019352775.1,Portugal,Europe,2020,others,-,"optrA, poxtA",Chromosome,,
+GCA_019352795.1,Portugal,Europe,2020,others,-,"cfr(D), optrA",Chromosome,fexA-optrA,
+GCA_019352805.1,Portugal,Europe,2018,others,40,"cfr(D), optrA",Chromosome,fexA-optrA,
+GCA_019352835.1,Portugal,Europe,2019,others,-,"optrA, poxtA",Chromosome,,
+GCA_019352855.1,Portugal,Europe,2019,others,-,"optrA, poxtA",Chromosome,,
+GCA_019774535.1,China,Asia,2018,animal,8,"optrA, poxtA",Plasmid,,
+GCA_019856595.1,China,Asia,2018,animal,692,"optrA, poxtA",Plasmid,,
+GCA_019917325.1,China,Asia,2016,animal,86,optrA,Plasmid,fexA-optrA,
+GCA_019917335.1,China,Asia,2016,animal,480,optrA,Plasmid,fexA-optrA-ermA,
+GCA_019917405.1,China,Asia,2016,animal,16,optrA,Chromosome,,
+GCA_019917435.1,China,Asia,2016,animal,476,optrA,Chromosome,,
+GCA_020616775.1,South Korea,Asia,2018,animal,585,optrA,Chromosome,Tn6674,truncated
+GCA_020616935.1,South Korea,Asia,2019,animal,27,"cfr(D), optrA",Chromosome,,
+GCA_020882115.1,China,Asia,2017,animal,-,optrA,Plasmid,fexA-optrA-ermA,
+GCA_021121195.1,Belgium,Europe,2019,,631,optrA,Chromosome,Tn6674,WT
+GCA_021121215.1,Belgium,Europe,2019,,480,optrA,Chromosome,fexA-optrA,
+GCA_021121265.1,Belgium,Europe,2019,,16,optrA,Plasmid,fexA-optrA-ermA,
+GCA_021121415.1,Belgium,Europe,2019,,506,optrA,Chromosome,Tn6674,truncated
+GCA_021121465.1,Belgium,Europe,2019,,16,optrA,Chromosome,fexA-optrA,
+GCA_021121495.1,Belgium,Europe,2019,,-,optrA,Chromosome,,
+GCA_021121565.1,Belgium,Europe,2019,,-,optrA,Plasmid,fexA-optrA,
+GCA_021121725.1,Belgium,Europe,2019,,21,optrA,Chromosome,fexA-optrA,
+GCA_021121905.1,Belgium,Europe,2019,,480,optrA,Chromosome,fexA-optrA,
+GCA_021122025.1,Belgium,Europe,2019,,86,optrA,Chromosome,fexA-optrA-ermA,
+GCA_021122105.1,Belgium,Europe,2019,,21,optrA,Chromosome,fexA-optrA,
+GCA_021122365.1,Belgium,Europe,2019,,21,optrA,Plasmid,,
+GCA_021122485.1,Belgium,Europe,2019,,480,optrA,Chromosome,fexA-optrA,
+GCA_021122555.1,Belgium,Europe,2019,,86,optrA,Plasmid,fexA-optrA-ermA,
+GCA_021122665.1,Belgium,Europe,2019,,330,optrA,Chromosome,fexA-optrA,
+GCA_021122745.1,Belgium,Europe,2019,,58,optrA,Plasmid,fexA-optrA-ermA,
+GCA_021122845.1,Belgium,Europe,2019,,943,optrA,Plasmid,fexA-optrA-ermA,
+GCA_021122865.1,Belgium,Europe,2019,,409,"cfr(D), optrA",Chromosome,Tn6674,WT
+GCA_021122885.1,Belgium,Europe,2019,,-,optrA,Chromosome,fexA-optrA-ermA,
+GCA_021122905.1,Belgium,Europe,2019,,40,optrA,Chromosome,Tn6674,WT
+GCA_021122925.1,Belgium,Europe,2019,,133,optrA,Chromosome,Tn6674,WT
+GCA_021122965.1,Belgium,Europe,2019,,207,optrA,Plasmid,fexA-optrA,
+GCA_021123045.1,Belgium,Europe,2019,,59,optrA,Chromosome,Tn6674,WT
+GCA_021123105.1,Belgium,Europe,2019,,234,optrA,Plasmid,fexA-optrA,
+GCA_021123115.1,Belgium,Europe,2019,,241,"cfr(D), optrA",Plasmid,fexA-optrA,
+GCA_021123325.1,Belgium,Europe,2019,,55,optrA,Chromosome,fexA-optrA,
+GCA_021123365.1,Belgium,Europe,2019,,49,optrA,Chromosome,fexA-optrA,
+GCA_021123425.1,Belgium,Europe,2019,,23,optrA,Chromosome,Tn6674,WT
+GCA_021123435.1,Belgium,Europe,2019,,-,optrA,Chromosome,fexA-optrA-ermA,
+GCA_021123445.1,Belgium,Europe,2019,,16,optrA,Chromosome,,
+GCA_021123485.1,Belgium,Europe,2019,,21,optrA,Chromosome,fexA-optrA,
+GCA_021123565.1,Belgium,Europe,2019,,108,"optrA, poxtA",Plasmid,fexA-optrA,
+GCA_021123775.1,Belgium,Europe,2019,,-,optrA,Chromosome,Tn6674,
+GCA_021123845.1,Belgium,Europe,2019,,476,optrA,Chromosome,Tn6674,truncated
+GCA_021124025.1,Belgium,Europe,2019,,-,optrA,Chromosome,,
+GCA_021124125.1,Belgium,Europe,2019,,288,optrA,Plasmid,fexA-optrA-ermA,
+GCA_021124225.1,Belgium,Europe,2019,,16,optrA,Plasmid,fexA-optrA,
+GCA_021124235.1,Belgium,Europe,2019,,-,"cfr, optrA",Chromosome,,
+GCA_021124285.1,Belgium,Europe,2019,,40,optrA,Chromosome,,
+GCA_021124385.1,Belgium,Europe,2019,,21,optrA,Plasmid,fexA-optrA,
+GCA_021124405.1,Belgium,Europe,2019,,-,optrA,Plasmid,fexA-optrA,
+GCA_021124485.1,Belgium,Europe,2019,,25,optrA,Chromosome,Tn6674,WT
+GCA_021124585.1,Belgium,Europe,2019,,-,"optrA, poxtA",Chromosome,,
+GCA_021124605.1,Belgium,Europe,2019,,-,"optrA, poxtA",Chromosome,,
+GCA_021390315.1,China,Asia,2021,,8,"cfr(D), optrA",Chromosome,fexA-optrA,
+GCA_022935985.1,USA,North America,2022,animal,585,optrA,Chromosome,,
+GCA_023182655.2,China,Asia,2018,animal,116,optrA,Plasmid,fexA-optrA-ermA,
+GCA_023182675.2,China,Asia,2018,animal,476,optrA,Plasmid,fexA-optrA-ermA,
+GCA_023182695.2,China,Asia,2018,animal,16,optrA,Plasmid,fexA-optrA-ermA,
+GCA_023182715.2,China,Asia,2018,animal,16,optrA,Plasmid,fexA-optrA-ermA,
+GCA_023182735.2,China,Asia,2018,animal,-,optrA,Plasmid,fexA-optrA-ermA,
+GCA_023182755.2,China,Asia,2018,animal,59,optrA,Plasmid,fexA-optrA-ermA,
+GCA_023182775.2,China,Asia,2018,animal,-,optrA,Plasmid,,
+GCA_023182795.2,China,Asia,2018,animal,-,optrA,Plasmid,fexA-optrA-ermA,
+GCA_023299225.1,,,2021,others,593,"cfr(D), optrA",Chromosome,,
+GCA_023299425.1,,,2022,others,474,optrA,Chromosome,Tn6674,truncated
+GCA_023299465.1,,,2022,others,-,optrA,Plasmid,,
+GCA_023299485.1,,,2022,others,-,"cfr, optrA",Chromosome,,
+GCA_023299505.1,,,2022,others,16,"cfr(D), optrA",Plasmid,,
+GCA_023299525.1,,,2022,others,369,optrA,Chromosome,Tn6674,truncated
+GCA_023299545.1,,,2022,others,593,optrA,Chromosome,,
+GCA_023299585.1,,,2022,others,476,optrA,Chromosome,Tn6674,truncated
+GCA_023299645.1,,,2022,others,256,optrA,Plasmid,fexA-optrA-ermA,
+GCA_023299685.1,,,2022,others,-,optrA,Chromosome,,
+GCA_023299705.1,,,2022,others,376,optrA,Plasmid,,
+GCA_023299785.1,,,2022,others,207,optrA,Chromosome,,
+GCA_023300025.1,,,2022,others,631,optrA,Chromosome,Tn6674,WT
+GCA_023375245.1,,,2021,animal,376,optrA,Plasmid,,
+GCA_023470065.1,China,Asia,2018,animal,-,optrA,Chromosome,Tn6674,WT
+GCA_023650735.1,China,Asia,2021,animal,256,"cfr, cfr(D), optrA",Chromosome,Tn6674,
+GCA_023702145.1,China,Asia,2021,animal,256,"cfr(D), optrA",Chromosome,Tn6674,truncated
+GCA_023746575.1,China,Asia,2021,animal,368,optrA,Plasmid,fexA-optrA-ermA,
+GCA_024160685.1,Italy,Europe,2020,animal,476,optrA,Chromosome,Tn6674,truncated
+GCA_024160765.1,Italy,Europe,2020,animal,476,optrA,Chromosome,fexA-optrA-ermA,
+GCA_024267595.1,China,Asia,2022,,843,optrA,Chromosome,Tn6674,WT
+GCA_024483145.1,United Arab Emirates,Asia,2021,animal,-,optrA,Chromosome,fexA-optrA-ermA,
+GCA_024483525.1,United Arab Emirates,Asia,2021,animal,314,optrA,Plasmid,fexA-optrA-ermA,
+GCA_024487665.1,United Arab Emirates,Asia,2021,animal,476,optrA,Chromosome,fexA-optrA,
+GCA_024487685.1,United Arab Emirates,Asia,2021,animal,-,optrA,Chromosome,,
+GCA_024487705.1,United Arab Emirates,Asia,2021,animal,476,optrA,Chromosome,Tn6674,truncated
+GCA_024531085.1,United Arab Emirates,Asia,2021,animal,-,optrA,Chromosome,,
+GCA_024535035.1,United Arab Emirates,Asia,2021,animal,476,optrA,Chromosome,Tn6674,truncated
+GCA_024540495.1,United Arab Emirates,Asia,2021,animal,-,optrA,Chromosome,fexA-optrA-ermA,
+GCA_024579755.1,South Korea,Asia,2020,animal,476,"cfr(D), optrA",Chromosome,Tn6674,
+GCA_024579795.1,South Korea,Asia,2020,animal,100,"cfr(D), optrA",Plasmid,Tn6674,
+GCA_025420395.1,China,Asia,2018,environment,480,optrA,Chromosome,Tn6674,WT
+GCA_025420435.1,China,Asia,2018,environment,480,optrA,Chromosome,Tn6674,WT
+GCA_025641915.1,China,Asia,2018,animal,-,optrA,Chromosome,Tn6674,WT
+GCA_025641945.1,China,Asia,2018,animal,86,optrA,Chromosome,Tn6674,WT
+GCA_025753025.1,China,Asia,2020,animal,970,optrA,Chromosome,fexA-optrA-ermA,
+GCA_025753415.1,China,Asia,2018,animal,21,optrA,Chromosome,fexA-optrA-ermA,
+GCA_025753475.1,China,Asia,2019,animal,-,optrA,Chromosome,fexA-optrA-ermA,
+GCA_025753535.1,China,Asia,2019,animal,476,optrA,Chromosome,Tn6674,WT
+GCA_025753545.1,China,Asia,2019,animal,16,optrA,Chromosome,Tn6674,WT
+GCA_025753635.1,China,Asia,2020,animal,86,optrA,Chromosome,fexA-optrA-ermA,
+GCA_025753675.1,China,Asia,2020,animal,714,optrA,Chromosome,fexA-optrA-ermA,
+GCA_025753735.1,China,Asia,2020,animal,714,optrA,Chromosome,,
+GCA_025776135.1,USA,North America,2022,animal,96,optrA,Plasmid,fexA-optrA-ermA,
+GCA_025972265.1,Australia,Oceania,2016,clinical,256,optrA,Plasmid,fexA-optrA-ermA,
+GCA_026200775.1,China,Asia,2021,animal,314,optrA,Chromosome,fexA-optrA-ermA,
+GCA_026200815.1,China,Asia,2021,animal,480,optrA,Chromosome,fexA-optrA-ermA,
+GCA_026200925.1,China,Asia,2021,animal,506,optrA,Chromosome,fexA-optrA-ermA,
+GCA_026200965.1,China,Asia,2021,animal,86,optrA,Chromosome,Tn6674,WT
+GCA_026201015.1,China,Asia,2021,animal,-,optrA,Chromosome,fexA-optrA-ermA,
+GCA_026201025.1,China,Asia,2021,animal,476,optrA,Chromosome,Tn6674,WT
+GCA_026201115.1,China,Asia,2021,animal,-,optrA,Chromosome,fexA-optrA-ermA,
+GCA_026201125.1,China,Asia,2021,animal,16,optrA,Plasmid,fexA-optrA-ermA,
+GCA_026201175.1,China,Asia,2021,animal,632,optrA,Plasmid,fexA-optrA-ermA,
+GCA_026201235.1,China,Asia,2021,animal,-,optrA,Chromosome,fexA-optrA-ermA,
+GCA_026201295.1,China,Asia,2021,animal,-,optrA,Chromosome,fexA-optrA-ermA,
+GCA_026201315.1,China,Asia,2021,animal,-,optrA,Chromosome,fexA-optrA-ermA,
+GCA_026201325.1,China,Asia,2021,animal,-,optrA,Chromosome,fexA-optrA-ermA,
+GCA_026201375.1,China,Asia,2021,animal,631,optrA,Chromosome,Tn6674,WT
+GCA_026201435.1,China,Asia,2021,animal,-,optrA,Chromosome,fexA-optrA-ermA,
+GCA_026201475.1,China,Asia,2021,animal,59,optrA,Chromosome,fexA-optrA-ermA,
+GCA_026201555.1,China,Asia,2021,animal,21,optrA,Chromosome,,
+GCA_026201565.1,China,Asia,2021,animal,-,optrA,Chromosome,fexA-optrA-ermA,
+GCA_026201595.1,China,Asia,2021,animal,21,optrA,Chromosome,Tn6674,WT
+GCA_026201615.1,China,Asia,2021,animal,868,optrA,Chromosome,fexA-optrA-ermA,
+GCA_026201675.1,China,Asia,2021,animal,444,optrA,Chromosome,Tn6674,WT
+GCA_026201725.1,China,Asia,2021,animal,19,optrA,Chromosome,fexA-optrA-ermA,
+GCA_026201835.1,China,Asia,2021,animal,982,optrA,Chromosome,Tn6674,WT
+GCA_026201895.1,China,Asia,2021,animal,21,optrA,Chromosome,Tn6674,WT
+GCA_026201915.1,China,Asia,2021,animal,256,"cfr(D), optrA",Chromosome,,
+GCA_026201995.1,China,Asia,2021,animal,-,optrA,Chromosome,fexA-optrA-ermA,
+GCA_026202015.1,China,Asia,2021,animal,-,"cfr(D), optrA",Chromosome,,
+GCA_026202225.1,China,Asia,2021,animal,634,optrA,Chromosome,fexA-optrA-ermA,
+GCA_026202285.1,China,Asia,2021,animal,-,optrA,Chromosome,Tn6674,WT
+GCA_026202315.1,China,Asia,2021,animal,-,optrA,Chromosome,Tn6674,WT
+GCA_026202335.1,China,Asia,2021,animal,21,optrA,Chromosome,Tn6674,WT
+GCA_026202355.1,China,Asia,2021,animal,21,optrA,Chromosome,Tn6674,WT
+GCA_026202415.1,China,Asia,2021,animal,-,optrA,Chromosome,fexA-optrA-ermA,
+GCA_026202435.1,China,Asia,2021,animal,634,optrA,Plasmid,fexA-optrA,
+GCA_026202575.1,China,Asia,2021,animal,632,optrA,Chromosome,fexA-optrA-ermA,
+GCA_026202615.1,China,Asia,2021,animal,-,optrA,Chromosome,Tn6674,WT
+GCA_026202695.1,China,Asia,2021,animal,21,optrA,Chromosome,Tn6674,WT
+GCA_026202715.1,China,Asia,2021,animal,-,optrA,Chromosome,Tn6674,WT
+GCA_026202725.1,China,Asia,2021,animal,21,optrA,Chromosome,Tn6674,WT
+GCA_026202775.1,China,Asia,2021,animal,-,optrA,Chromosome,Tn6674,WT
+GCA_026202785.1,China,Asia,2021,animal,-,optrA,Chromosome,Tn6674,WT
+GCA_026202855.1,China,Asia,2021,animal,227,optrA,Chromosome,fexA-optrA-ermA,
+GCA_026202895.1,China,Asia,2021,animal,868,optrA,Chromosome,fexA-optrA-ermA,
+GCA_026203135.1,China,Asia,2021,animal,-,optrA,Chromosome,fexA-optrA-ermA,
+GCA_026203165.1,China,Asia,2021,animal,-,"cfr(D), optrA",Chromosome,,
+GCA_026203255.1,China,Asia,2021,animal,902,optrA,Plasmid,fexA-optrA-ermA,
+GCA_026203495.1,China,Asia,2021,animal,632,optrA,Plasmid,fexA-optrA-ermA,
+GCA_026203575.1,China,Asia,2021,animal,227,optrA,Plasmid,Tn6674,
+GCA_026203635.1,China,Asia,2021,animal,632,optrA,Plasmid,fexA-optrA-ermA,
+GCA_026203735.1,China,Asia,2021,animal,632,optrA,Plasmid,fexA-optrA-ermA,
+GCA_026203815.1,China,Asia,2021,animal,632,optrA,Plasmid,fexA-optrA-ermA,
+GCA_026203935.1,China,Asia,2021,animal,535,optrA,Chromosome,fexA-optrA-ermA,
+GCA_026204095.1,China,Asia,2021,animal,591,optrA,Chromosome,,
+GCA_026802365.1,China,Asia,2021,animal,81,optrA,Plasmid,fexA-optrA-ermA,
+GCA_026802385.1,China,Asia,2021,animal,631,optrA,Chromosome,Tn6674,WT
+GCA_027846135.1,USA,North America,2022,animal,480,optrA,Chromosome,fexA-optrA,
+GCA_027942035.1,China,Asia,2018,,314,optrA,Plasmid,fexA-optrA-ermA,
+GCA_028200655.1,,,2021,,-,optrA,Chromosome,Tn6674,WT
+GCA_028200665.1,,,2021,,-,optrA,Chromosome,Tn6674,WT
+GCA_028200685.1,,,2021,,-,optrA,Chromosome,Tn6674,WT
+GCA_028200755.1,,,2021,,593,optrA,Chromosome,,
+GCA_028335305.1,,,2021,animal,234,optrA,Plasmid,fexA-optrA,
+GCA_028335345.1,,,2021,animal,25,optrA,Plasmid,,
+GCA_028335425.1,,,2021,animal,376,optrA,Plasmid,,
+GCA_028335545.1,,,2021,animal,314,optrA,Plasmid,fexA-optrA-ermA,
+GCA_028335705.1,,,2021,animal,19,optrA,Plasmid,fexA-optrA,
+GCA_028532705.1,China,Asia,2021,animal,-,"cfr, cfr(D), optrA",Plasmid,fexA-optrA-ermA,
+GCA_028621735.1,China,Asia,2021,animal,21,"cfr, optrA",Chromosome,Tn6674,
+GCA_028621755.1,China,Asia,2021,animal,256,"cfr(D), optrA",Chromosome,Tn6674,truncated
+GCA_028621775.1,China,Asia,2021,animal,239,"cfr, optrA",Plasmid,fexA-optrA-ermA,
+GCA_029000425.1,China,Asia,2021,environment,506,optrA,Plasmid,fexA-optrA-ermA,
+GCA_029375915.1,Portugal,Europe,2017,animal,207,optrA,Plasmid,fexA-optrA-ermA,
+GCA_029378775.1,Portugal,Europe,2017,animal,-,optrA,Chromosome,,
+GCA_029378785.1,Portugal,Europe,2017,animal,-,optrA,Plasmid,fexA-optrA-ermA,
+GCA_029730355.1,USA,North America,2023,animal,330,optrA,Chromosome,fexA-optrA-ermA,
+GCA_029732835.1,China,Asia,2019,animal,368,optrA,Chromosome,fexA-optrA-ermA,
+GCA_029732845.1,China,Asia,2019,animal,631,optrA,Chromosome,Tn6674,WT
+GCA_029733095.1,China,Asia,2019,animal,81,optrA,Chromosome,fexA-optrA-ermA,
+GCA_029733115.1,China,Asia,2019,animal,-,optrA,Chromosome,Tn6674,WT
+GCA_029733225.1,China,Asia,2019,animal,-,optrA,Chromosome,Tn6674,WT
+GCA_029733325.1,China,Asia,2019,animal,-,optrA,Chromosome,Tn6674,WT
+GCA_029733475.1,China,Asia,2019,animal,-,optrA,Chromosome,Tn6674,WT
+GCA_029734075.1,China,Asia,2019,animal,-,optrA,Chromosome,Tn6674,WT
+GCA_029734175.1,China,Asia,2019,animal,241,optrA,Plasmid,fexA-optrA-ermA,
+GCA_029734275.1,China,Asia,2019,animal,-,optrA,Chromosome,Tn6674,WT
+GCA_029734425.1,China,Asia,2019,animal,-,optrA,Chromosome,Tn6674,truncated
+GCA_030064715.1,China,Asia,2019,animal,-,optrA,Plasmid,fexA-optrA-ermA,
+GCA_030110795.1,China,Asia,2019,animal,714,optrA,Chromosome,fexA-optrA-ermA,
+GCA_030110845.1,China,Asia,2019,animal,-,optrA,Chromosome,Tn6674,truncated
+GCA_030110865.1,China,Asia,2019,animal,480,optrA,Chromosome,fexA-optrA-ermA,
+GCA_030116755.1,China,Asia,2019,animal,-,optrA,Chromosome,,
+GCA_030116805.1,China,Asia,2019,animal,19,optrA,Chromosome,Tn6674,WT
+GCA_030116835.1,China,Asia,2019,animal,972,optrA,Chromosome,fexA-optrA-ermA,
+GCA_030178595.1,China,Asia,2019,animal,86,optrA,Chromosome,Tn6674,WT
+GCA_030178615.1,China,Asia,2019,animal,535,optrA,Chromosome,fexA-optrA-ermA,
+GCA_030178655.1,China,Asia,2019,animal,476,optrA,Chromosome,Tn6674,WT
+GCA_030178675.1,China,Asia,2019,animal,476,optrA,Chromosome,Tn6674,WT
+GCA_030178755.1,China,Asia,2019,animal,476,optrA,Chromosome,Tn6674,WT
+GCA_030178775.1,China,Asia,2019,animal,59,optrA,Chromosome,fexA-optrA-ermA,
+GCA_030178795.1,China,Asia,2019,animal,538,optrA,Chromosome,fexA-optrA-ermA,
+GCA_030178805.1,China,Asia,2019,animal,386,optrA,Chromosome,fexA-optrA-ermA,
+GCA_030178835.1,China,Asia,2019,animal,476,optrA,Chromosome,Tn6674,WT
+GCA_030178895.1,China,Asia,2019,animal,403,optrA,Plasmid,fexA-optrA-ermA,
+GCA_030178915.1,China,Asia,2019,animal,585,optrA,Plasmid,fexA-optrA,
+GCA_030178955.1,China,Asia,2019,animal,403,optrA,Chromosome,,
+GCA_030178965.1,China,Asia,2019,animal,403,optrA,Chromosome,,
+GCA_030178995.1,China,Asia,2019,animal,403,optrA,Chromosome,,
+GCA_030270285.1,Japan,Asia,2021,animal,655,optrA,Chromosome,fexA-optrA-ermA,
+GCA_030270305.1,Japan,Asia,2021,animal,477,optrA,Chromosome,,
+GCA_030270325.1,Japan,Asia,2021,animal,593,optrA,Chromosome,,
+GCA_030295805.1,Japan,Asia,2021,animal,-,optrA,Chromosome,fexA-optrA-ermA,
+GCA_030364505.1,China,Asia,2016,others,474,optrA,Chromosome,,
+GCA_030364555.1,China,Asia,2016,others,910,optrA,Chromosome,fexA-optrA-ermA,
+GCA_030364575.1,China,Asia,2016,others,632,optrA,Chromosome,fexA-optrA-ermA,
+GCA_030364595.1,China,Asia,2016,others,476,optrA,Chromosome,,
+GCA_030364615.1,China,Asia,2016,others,535,optrA,Chromosome,fexA-optrA-ermA,
+GCA_030364645.1,China,Asia,2016,others,538,optrA,Plasmid,,
+GCF_002973735.1,France,Europe,2016,clinical,480,optrA,Chromosome,Tn6674,truncated
+GCF_002973775.1,France,Europe,2016,clinical,480,optrA,Chromosome,,
+GCF_003962325.1,China,Asia,2015,clinical,16,optrA,Chromosome,Tn6674,WT
+GCF_003962375.1,China,Asia,2015,clinical,585,optrA,Plasmid,fexA-optrA-ermA,
+GCF_003962645.1,China,Asia,2015,clinical,476,optrA,Chromosome,Tn6674,WT
+GCF_004103105.1,China,Asia,2015,clinical,476,optrA,Chromosome,Tn6674,WT
+GCF_005979285.1,China,Asia,2017,clinical,691,optrA,Plasmid,Tn6674,WT
+GCF_005979305.1,China,Asia,2017,clinical,74,optrA,Plasmid,fexA-optrA-ermA,
+GCF_013312295.1,Canada,North America,2015,clinical,593,optrA,Chromosome,,
+GCF_013523155.1,Colombia,South America,2017,clinical,21,optrA,Plasmid,fexA-optrA,
+GCF_014325425.1,Lebanon,Asia,2017,clinical,480,optrA,Plasmid,,
+GCF_019350975.1,South Korea,Asia,2017,human,86,"cfr(D), optrA, poxtA2",Chromosome,,
+GCF_019731615.1,China,Asia,2020,clinical,116,optrA,Chromosome,fexA-optrA-ermA,
+GCF_020405635.1,Russia,Asia,2020,clinical,476,optrA,Chromosome,Tn6674,truncated
+GCF_022427325.1,China,Asia,2017,clinical,403,"optrA, poxtA",Chromosome,,
+GCF_022427745.1,China,Asia,2017,clinical,480,optrA,Plasmid,Tn6674,
+GCF_022758225.1,China,Asia,2020,clinical,16,optrA,Chromosome,fexA-optrA,
+GCF_024339425.1,Spain,Europe,2018,clinical,480,optrA,Plasmid,,
+GCF_024339435.1,Spain,Europe,2018,clinical,7,optrA,Plasmid,fexA-optrA-ermA,
+GCF_024339445.1,Spain,Europe,2018,clinical,585,optrA,Plasmid,fexA-optrA,
+GCF_024927865.1,Bangladesh,Asia,2018,clinical,-,optrA,Chromosome,Tn6674,truncated
+GCF_025482015.1,France,Europe,2020,clinical,480,"cfr, optrA, poxtA",Chromosome,,
+GCF_025482075.1,France,Europe,2019,clinical,476,optrA,Chromosome,Tn6674,
+GCF_025482095.1,France,Europe,2019,clinical,59,optrA,Chromosome,Tn6674,
+GCF_025482215.1,France,Europe,2019,clinical,480,optrA,Plasmid,fexA-optrA-ermA,
+GCF_025482255.1,France,Europe,2019,clinical,19,optrA,Plasmid,fexA-optrA,
+GCF_025482405.1,France,Europe,2019,clinical,41,optrA,Plasmid,fexA-optrA,
+GCF_025482435.1,France,Europe,2019,clinical,480,optrA,Plasmid,fexA-optrA,
+GCF_025482455.1,France,Europe,2019,clinical,480,optrA,Plasmid,fexA-optrA,
+GCF_025482495.1,France,Europe,2019,clinical,116,"cfr(D), optrA",Chromosome,fexA-optrA,
+GCF_025482555.1,France,Europe,2019,clinical,585,optrA,Chromosome,Tn6674,
+GCF_025482575.1,France,Europe,2019,clinical,480,optrA,Plasmid,fexA-optrA,
+GCF_025482595.1,France,Europe,2019,clinical,476,optrA,Plasmid,fexA-optrA-ermA,
+GCF_025482635.1,France,Europe,2019,clinical,376,optrA,Plasmid,fexA-optrA-ermA,
+GCF_025482655.1,France,Europe,2019,clinical,19,optrA,Chromosome,fexA-optrA,
+GCF_025482675.1,France,Europe,2019,clinical,-,optrA,Chromosome,Tn6674,
+GCF_025482695.1,France,Europe,2019,clinical,444,optrA,Chromosome,fexA-optrA-ermA,
+GCF_025482715.1,France,Europe,2018,clinical,-,"cfr(D), optrA",Plasmid,fexA-optrA,
+GCF_025482725.1,France,Europe,2018,clinical,314,"cfr, optrA",Chromosome,,
+GCF_025482785.1,France,Europe,2018,clinical,-,optrA,Plasmid,,
+GCF_029866805.1,China,Asia,2020,clinical,16,optrA,Chromosome,,
+GCF_030339965.1,South Korea,Asia,2019,clinical,476,optrA,Chromosome,Tn6674,truncated
+GCF_030339995.1,South Korea,Asia,2019,clinical,689,optrA,Chromosome,fexA-optrA-ermA,
+GCF_030340065.1,South Korea,Asia,2019,clinical,-,optrA,Chromosome,Tn6674,WT
+GCF_030340205.1,South Korea,Asia,2019,clinical,689,optrA,Chromosome,fexA-optrA-ermA,
+GCF_030340245.1,South Korea,Asia,2019,clinical,585,optrA,Plasmid,,
+GCF_030340285.1,South Korea,Asia,2019,clinical,-,optrA,Chromosome,Tn6674,truncated
+GCF_030340325.1,South Korea,Asia,2019,clinical,476,optrA,Chromosome,Tn6674,truncated
+GCF_030340345.1,South Korea,Asia,2019,clinical,-,optrA,Chromosome,Tn6674,WT
+GCF_030340485.1,South Korea,Asia,2020,clinical,179,optrA,Chromosome,fexA-optrA-ermA,
+GCF_030340565.1,South Korea,Asia,2020,clinical,-,optrA,Chromosome,Tn6674,truncated
+GCF_030340605.1,South Korea,Asia,2020,clinical,179,optrA,Chromosome,Tn6674,truncated
+GCF_902161825.1,United Kingdom,Europe,2018,clinical,21,optrA,Plasmid,,
+GCF_906464835.1,United Kingdom,Europe,2017,clinical,585,optrA,Plasmid,,
+GCF_906464865.1,United Kingdom,Europe,2016,clinical,330,optrA,Plasmid,fexA-optrA,
+GCF_906464875.1,United Kingdom,Europe,2017,clinical,16,"cfr(D), optrA",Plasmid,fexA-optrA,
+GCF_906464915.2,United Kingdom,Europe,2015,clinical,19,optrA,Plasmid,Tn6674,WT
+GCF_906464925.1,United Kingdom,Europe,2017,clinical,894,optrA,Plasmid,fexA-optrA-ermA,
+SRR10387870,China,Asia,2018,human/clinical,16,optrA,Chromosome,,
+SRR10387871,China,Asia,2018,human/clinical,16,optrA,Chromosome,fexA-optrA-ermA,
+SRR10387876,China,Asia,2018,human/clinical,16,optrA,Chromosome,fexA-optrA-ermA,
+SRR10387877,China,Asia,2018,human/clinical,16,optrA,Chromosome,fexA-optrA-ermA,
+SRR10387878,China,Asia,2018,human/clinical,16,optrA,Chromosome,fexA-optrA-ermA,
+SRR10387879,China,Asia,2018,human/clinical,16,optrA,Chromosome,fexA-optrA,
+SRR13080469,Belgium,Europe,2017,human/clinical,480,optrA,Chromosome,fexA-optrA,
+SRR13080473,Belgium,Europe,2019,human/clinical,480,optrA,Chromosome,fexA-optrA,
+SRR13587488,China,Asia,2015,human/clinical,772,optrA,Chromosome,fexA-optrA-ermA,
+SRR13587489,China,Asia,2015,human/clinical,249,optrA,Chromosome,fexA-optrA,
+SRR13587490,China,Asia,2014,human,16,optrA,Chromosome,fexA-optrA-ermA,
+SRR13587491,China,Asia,2014,human,480,optrA,Chromosome,fexA-optrA,
+SRR13587493,China,Asia,2012,human,-,optrA,Chromosome,fexA-optrA-ermA,
+SRR13587494,China,Asia,2012,human,16,optrA,Chromosome,fexA-optrA,
+SRR13587495,China,Asia,2012,human,480,optrA,Plasmid,,
+SRR13587496,China,Asia,2017,human/clinical,585,optrA,Plasmid,fexA-optrA,
+SRR13587498,China,Asia,2017,human/clinical,16,optrA,Plasmid,Tn6674,
+SRR13587499,China,Asia,2017,human/clinical,585,optrA,Chromosome,,
+SRR13587500,China,Asia,2012,human,16,optrA,Plasmid,fexA-optrA-ermA,
+SRR13587501,China,Asia,2012,human,368,optrA,Chromosome,fexA-optrA-ermA,
+SRR13712557,Canada,North America,2015,environment,93,optrA,Chromosome,,
+SRR13712587,Canada,North America,2015,environment,476,optrA,Chromosome,,
+SRR13712598,Canada,North America,2015,environment,207,optrA,Chromosome,,
+SRR19309658,Malaysia,Asia,2020,animal,895,optrA,Chromosome,Tn6674,WT
+SRR21102103,Belgium,Europe,2019,animal,631,optrA,Chromosome,Tn6674,WT
+SRR21102104,Belgium,Europe,2020,animal,40,optrA,Chromosome,Tn6674,WT
+SRR21102105,Belgium,Europe,2019,animal,843,optrA,Plasmid,,
+SRR21102106,Belgium,Europe,2020,animal,40,optrA,Chromosome,Tn6674,WT
+SRR21102108,Belgium,Europe,2020,animal,474,optrA,Chromosome,Tn6674,truncated
+SRR21102112,Belgium,Europe,2020,animal,207,optrA,Plasmid,fexA-optrA,
+SRR21102117,Belgium,Europe,2020,animal,58,optrA,Plasmid,fexA-optrA-ermA,
+SRR21102118,Belgium,Europe,2020,animal,480,optrA,Chromosome,fexA-optrA,
+SRR21102119,Belgium,Europe,2019,animal,16,optrA,Plasmid,fexA-optrA-ermA,
+SRR21102132,Belgium,Europe,2019,animal,-,optrA,Plasmid,fexA-optrA,
+SRR23460006,China,Asia,2022,,16,optrA,Chromosome,fexA-optrA-ermA,
+SRR23460007,China,Asia,2022,,-,optrA,Chromosome,fexA-optrA-ermA,
+SRR23460008,China,Asia,2022,,-,optrA,Chromosome,fexA-optrA-ermA,
+SRR23460009,China,Asia,2022,,-,optrA,Chromosome,fexA-optrA-ermA,
+SRR23460010,China,Asia,2022,,-,optrA,Chromosome,fexA-optrA-ermA,
+SRR23460011,China,Asia,2022,,-,optrA,Chromosome,fexA-optrA-ermA,
+SRR5407742,China,Asia,2012,,-,optrA,Chromosome,,
+SRR6456332,Germany,Europe,2014,human,16,optrA,Chromosome,fexA-optrA,
+SRR6456333,Germany,Europe,2015,human/clinical,585,optrA,Chromosome,fexA-optrA-ermA,
+SRR6456335,Germany,Europe,2016,human/clinical,21,optrA,Chromosome,,
+SRR6456339,Germany,Europe,2015,human/clinical,480,"cfr(D), optrA",Chromosome,fexA-optrA,
+SRR6456340,Germany,Europe,2016,human/clinical,21,"cfr(D), optrA",Chromosome,fexA-optrA,
+SRR6456346,Germany,Europe,2016,human/clinical,480,optrA,Chromosome,fexA-optrA-ermA,
+SRR6456347,Germany,Europe,2016,human/clinical,480,optrA,Chromosome,Tn6674,WT
+SRR6456348,Germany,Europe,2016,human/clinical,16,optrA,Plasmid,fexA-optrA-ermA,
+SRR6456349,Germany,Europe,2016,human/clinical,480,optrA,Chromosome,fexA-optrA,
+SRR6456351,Germany,Europe,2016,human/clinical,16,optrA,Plasmid,fexA-optrA-ermA,
+SRR7658823,Germany,Europe,2017,human/clinical,476,optrA,Plasmid,fexA-optrA-ermA,
+SRR7658824,Germany,Europe,2017,human/clinical,40,optrA,Plasmid,fexA-optrA-ermA,
+SRR9021436,South Africa,Asia,2017,human/clinical,-,optrA,Chromosome,,
