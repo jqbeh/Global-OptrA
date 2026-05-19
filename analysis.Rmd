@@ -1,0 +1,189 @@
+---
+title: "analysis"
+author: "Jia Qi Beh"
+date: "2025-08-03"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Global OptrA manuscript - analysis
+
+This document contains all R packages and codes used in the bioinformatic analyses of the manuscript 'Global dissemination of optrA-mediated linezolid resistance
+in enterococci'.
+
+
+# Libraries
+
+```{r}
+library(tidyverse)
+library(ggforce)
+```
+
+
+# Genome download
+
+Download Illumina reads from NCBI SRA using fastq-dump
+```{bash}
+fastq-dump --outdir <OutputFolder> --gzip --skip-technical <AccessionNumber>
+```
+
+Download assemblies from NCBI using ncbi-entrez
+```{bash}
+# Create accessions.txt file
+for line in $(cat accessions.txt); do efetch -db nucleotide -id ${line} -format fasta > ${line}.fasta ; done
+```
+
+
+# fastp
+version 0.23.2
+
+```{bash}
+# create accessions.txt
+# run fastp
+for line in $(cat accessions.txt); do fastp --thread 16 -r -W 4 -M 20 -l 36 -i ${line}_1.trim.fastq.gz -I ${line}_2.trim.fastq.gz -o ${line}_R1_trimmed.fastq.gz -O ${line}_R2_trimmed.fastq.gz -j ${line}.json -h ${line}.html ; done
+```
+
+
+# short-read assembly
+shovill version 1.1.0
+
+```{bash}
+# create accession.txt
+# run shovill
+while read line; do nice shovill --outdir ${line} --R1 ${line}_R1_trimmed.fastq.gz --R2 ${line}_R2_trimmed.fastq.gz --cpus 16; done < accessions.txt
+```
+
+
+# quast
+version 5.2.0
+
+```{bash}
+# create accession.txt
+# run quast
+for line in $(cat accessions.txt); do ${line}/contigs.fa -o ${line} -t 16; done
+```
+
+
+# abritamr
+version 1.0.11
+
+```{bash}
+abritamr run --contigs input.txt --species Enterococcus_faecium -j 16
+abritamr run --contigs input.txt --species Enterococcus_faecalis -j 16
+```
+
+
+# fastani
+version 1.33
+
+```{bash}
+for line in $(cat accessions.txt); do /home/fastani/FastANI-master/fastANI -q ${line}.fasta -r reference.fasta -o ${line}.out ; done
+```
+
+
+# mlst
+version 2.23.0
+
+```{bash}
+mlst --scheme efaecium assembly.fa --threads 10
+```
+
+
+# snippy + iqtree
+version 4.4.5
+
+```{bash}
+# run snippy
+snippy --cpus 16 --outdir output --ref reference.gb --R1 ID_R1.trimmed.fastq.gz --R2 ID_R2.trimmed.fastq.gz
+
+# run snippy-core
+snippy-core AUSMDU* --ref reference.gbff
+
+# run iqtree v2.0.6
+iqtree -s core.aln -m GTR+I+G -B 1000 -nt 16
+```
+
+
+# cd-hit-est
+version 4.8.1
+
+```{bash}
+cd-hit -i input.fasta -o output -c 0.95 -b 20 -n 5 -M 1100 -T 5
+```
+
+
+# mob-typer
+mobsuite version 3.0.3
+
+```{bash}
+mob_typer --infile assembly.fa --out_file output.txt
+```
+
+
+# mashtree
+version 1.4.6
+
+```{bash}
+mashtree --mindepth 0 --numcpus 2 --outmatrix mash_matrix.txt *.fasta > mashtree.dnd
+```
+
+
+# contig-puller
+version 2.0
+
+```{bash}
+for line in $(cat accessions.txt); do contig-puller.py --db optrA_reference.fasta --out ${line}.fasta --id 80 --cpus 16 ${line}.fasta; done
+```
+
+
+# panaroo
+
+```{bash}
+# copy all .gff files into input_gff/
+# run panaroo with default core threshold 0.95
+conda activate panaroo
+panaroo -i input_gff/*.gff -o results_threshold95 --clean-mode strict -t 30 --remove-invalid-genes
+
+# Gene graph neighbourhood
+panaroo-gene-neighbourhood --gene optrA --graph final_graph.gml --out neighbourhood.txt --expand_no 2
+```
+
+
+# minimap2 + samtools
+minimap2 version 2.17
+samtools version 1.21
+
+```{bash}
+# make assembly accessions.txt
+# run minimap2
+for line in $(cat accessions.list); do /home/minimap2/minimap2 -a plasmid_seq.fasta ${line}.fasta > ${line}.sam ; done
+
+# run samtools
+for line in $(cat accessions.list); do samtools view -S -b ${line}.sam > ${line}.bam; done
+for line in $(cat accessions.list); do samtools sort -o ${line}.sorted.bam ${line}.bam ; done
+for line in $(cat accessions.list); do samtools index ${line}.sorted.bam; done
+
+# Generate depth information
+for line in $(cat accessions.list); do samtools depth -a ${line}.sorted.bam > ${line}.depth.txt; done
+
+# count total nt covered in the reference Tn6674
+total_positions=57536  # reference length
+while IFS= read -r accession; do
+    samtools depth -a ${accession}.sorted.bam > ${accession}.depth.txt
+    covered_positions=$(awk '$3 > 0 {count++} END {print count}' ${accession}.depth.txt)
+    coverage_percentage=$(echo "scale=2; $covered_positions / $total_positions * 100" | bc)
+    echo "Coverage percentage for ${accession}: $coverage_percentage%"
+done < accessions.list > output.txt
+```
+
+
+# clinker
+
+```{bash}
+clinker *.gbff -ufo -j 12 -o output -p plot.html
+```
+
