@@ -12,7 +12,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Global OptrA manuscript - visualisation
 
-This document contains all R packages and codes used to create the figures in the manuscript 'Global dissemination of optrA-mediated linezolid resistance in enterococci'.
+This document contains all R packages and codes used 
+to create the figures in the manuscript "Global dissemination 
+of optrA-mediated linezolid resistance in enterococci".
 
 
 # Libraries
@@ -63,7 +65,7 @@ setwd("~/Downloads/")
 
 # Figure 1
 
-Manually constructed.
+Figure was created manually.
 
 
 # Figure 2
@@ -214,7 +216,7 @@ setdiff(iqtree$tip.label, sample_data$Isolate)
 # Add root and scale bar
 tree_mid <- midpoint(iqtree)
 tree_mid
-ape::write.tree(tree_mid, file='~/Downloads/midpoint_tree.nwk')
+ape::write.tree(tree_mid, file='midpoint_tree.nwk')
 ```
 
 Make plot
@@ -312,7 +314,7 @@ setdiff(iqtree$tip.label, sample_data$Isolate)
 # Add root and scale bar
 tree_mid <- midpoint(iqtree)
 tree_mid
-ape::write.tree(tree_mid, file='~/Downloads/midpoint_tree.nwk')
+ape::write.tree(tree_mid, file='midpoint_tree.nwk')
 ```
 
 Make plot
@@ -347,7 +349,7 @@ hc <- hclust(d, method = "ward.D2")
 print(hc)
 
 # Make dendrogram
-pdf("~/Downloads/dendrogram.pdf")
+pdf("dendrogram.pdf")
 plot(as.dendrogram(hc), main = "Efm dendrogram", horiz = TRUE)
   # horiz = rotate plot horizontally (by default the dendrogram is vertical)
 dev.off()
@@ -390,7 +392,7 @@ ggsave("country_name.pdf", p, width = 6, height = 4, dpi = 300)
 
 # Figure 6
 
-Figure 6 was created using Clinker.
+Figure was created using Clinker.
 
 
 # Figure S1
@@ -963,14 +965,6 @@ Figure S7 was created using Clinker.
 # Figure S8
 
 Figure S8 was created using Clinker.
-
-
-
-
-
-
-
-
 
 
 # Figure S9
