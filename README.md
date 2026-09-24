@@ -9,5 +9,8 @@ Codes used to run bioinformatic analyses are in the `analysis.Rmd`.
 ## Visualisation
 Visualisation codes to generate figures are in the `visualisation.Rmd`.
 
+## Directories
+Paths to directories that contain input sequences on MDU PHL server.
+
 ## Citing
 Please cite this Github or the paper if you use these codes in your work or publication.
