@@ -12,8 +12,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Global OptrA manuscript - analysis
 
-This document contains all R packages and codes used in the bioinformatic analyses of the manuscript 'Global dissemination of optrA-mediated linezolid resistance
-in enterococci'.
+This document contains all R packages and codes used in the 
+bioinformatic analyses of the manuscript "Global dissemination
+of optrA-mediated linezolid resistance in enterococci".
 
 
 # Libraries
@@ -81,7 +82,12 @@ abritamr run --contigs input.txt --species Enterococcus_faecalis -j 16
 version 1.33
 
 ```{bash}
-for line in $(cat accessions.txt); do /home/fastani/FastANI-master/fastANI -q ${line}.fasta -r reference.fasta -o ${line}.out ; done
+for line in $(cat accessions.txt); do 
+    /home/fastani/FastANI-master/fastANI \
+    -q ${line}.fasta -r \
+    reference.fasta \
+    -o ${line}.out \
+done
 ```
 
 
@@ -136,7 +142,13 @@ mashtree --mindepth 0 --numcpus 2 --outmatrix mash_matrix.txt *.fasta > mashtree
 version 2.0
 
 ```{bash}
-for line in $(cat accessions.txt); do contig-puller.py --db optrA_reference.fasta --out ${line}.fasta --id 80 --cpus 16 ${line}.fasta; done
+for line in $(cat accessions.txt); do 
+    contig-puller.py \
+    --db optrA_reference.fasta \
+    --out ${line}.fasta \
+    --id 80 \
+    --cpus 16 ${line}.fasta \
+done
 ```
 
 
