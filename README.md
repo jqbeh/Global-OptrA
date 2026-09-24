@@ -9,4 +9,5 @@ Codes used to run bioinformatic analyses are in the `analysis.Rmd`.
 ## Visualisation
 Visualisation codes to generate figures are in the `visualisation.Rmd`.
 
+## Citing
 Please cite this Github or the paper if you use these codes in your work or publication.
